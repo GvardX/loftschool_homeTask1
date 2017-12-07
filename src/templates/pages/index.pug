@@ -1,0 +1,12 @@
+extends ../template
+
+block variables
+    - var title = "Добро пожаловать"
+block content
+    h1 Главная
+    form.main-form
+        label(for="email") email
+        input(type="email" id="email")
+        label(for="password" id="password")
+        input(type="password" id="password")
+        button Войти
