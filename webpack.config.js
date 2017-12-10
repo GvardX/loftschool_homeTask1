@@ -7,7 +7,8 @@ const config = {
     },
     plugins: [
         new UglifyJSPlugin({
-            sourceMap: true
+            sourceMap: true,
+            extractComments: false
         })
     ]
 };
