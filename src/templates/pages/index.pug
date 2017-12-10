@@ -3,10 +3,22 @@ extends ../template
 block variables
     - var title = "Добро пожаловать"
 block content
-    h1 Главная
-    form.main-form
-        label(for="email") email
-        input(type="email" id="email")
-        label(for="password" id="password")
-        input(type="password" id="password")
-        button Войти
+    section.welcome
+        button.button
+            a.button__link(href="#") Авторизоваться
+        .block-wrapper
+            .block-info
+                .about-me__wrapper
+                    .about-me
+                        .about-me__img
+                            img(src="assets/images/avatar.png", alt="avatar")
+                        .h2.about-me__title Андрей Азимов
+                        .span.about-me__description Личный сайт веб-разработчика
+                    +socials('socials__item_green')
+                ul.menu
+                    li.menu__item
+                        a.menu__link(href="my-works.html") Мои работы
+                    li.menu__item
+                        a.menu__link(href="about.html") Обо мне
+                    li.menu__item
+                        a.menu__link(href="blog.html") Блог

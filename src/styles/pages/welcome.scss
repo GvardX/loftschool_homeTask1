@@ -1,0 +1,68 @@
+
+.welcome{
+    height: 100vh;
+    background-image: url(../images/mount-bg.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+      
+}
+.block-wrapper{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    height: 100%;
+    position: relative;
+}
+.button{
+    position: absolute;
+    top: 2.4rem;
+    right: 10rem;
+    background-color: transparent;
+    padding: 1.5rem 2.9rem;
+    border: 1px solid #fff;
+    border-radius: 4px;
+    transition: .25s;
+    z-index: 5;
+    &:hover{
+        background-color: #fff;
+        cursor: pointer;
+        .button__link{
+            color: $greenLight;
+        }
+    }
+    &__link{
+        color: #fff;
+        font-size: 1.6rem;
+        font-weight: 500;
+        transition: .25s;
+    }
+}
+.block-info{
+    background-color: rgba(#fcfcfc, .85);
+    position: absolute;
+    transform: translate(0, -50%);
+    top: 50%;
+    border-radius: 5px;
+}
+ 
+.wrapper {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+}
+ 
+.welcome {
+    flex: 1 0 auto;
+}
+ 
+.end-text {
+    position: absolute;
+    background: transparent;
+    bottom: 50px;
+}
+   
+

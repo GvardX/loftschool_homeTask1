@@ -3,20 +3,33 @@
   <head>
     <meta charset="utf-8">
     <title>Обо мне</title>
-    <meta content="" name="description">
-    <meta content="" name="keywords">
+    <meta content="description" name="loftschool_work">
+    <meta content="keywords" name="Loftschool">
+    <meta content="author" name="Andrey Azimov">
     <meta content="width=device-width, initial-scale=1" name="viewport">
     <meta content="ie=edge" http-equiv="x-ua-compatible">
-    <link rel="stylesheet" href="assets/styles/app.scss">
+    <link rel="icon" href="assets/images/fav_mount.png">
+    <link rel="stylesheet" href="assets/styles/app.min.css">
+    <script src="assets/scripts/bundle.js" defer></script>
   </head>
   <body>
-    <h1>Обо мне</h1>
-    <h2>Меню</h2>
-    <ul class="menu">
-      <li><a href="index.html">Главная</a></li>
-      <li><a href="about.html">Обо мне</a></li>
-      <li><a href="my-works.html">Мои работы</a></li>
-      <li><a href="blog.html">Блог</a></li>
-    </ul>
+    <header class="header">
+      <div class="top-line">
+        <ul class="socials">
+          <li class="socials__item socials__item_white"><a class="socials__link"> <i class="fa fa-vk"></i></a></li>
+          <li class="socials__item socials__item_white"><a class="socials__link"><i class="fa fa-github"></i></a></li>
+          <li class="socials__item socials__item_white"><a class="socials__link"><i class="fa fa-instagram"></i></a></li>
+        </ul>
+        <div class="hamburger"></div><img class="hamburger_img" src="assets/images/icons/hamburger.svg">
+      </div>
+      <div class="portfolio">
+        <div class="about-me about-me__white">
+          <div class="about-me__img"><img src="assets/images/avatar.png" alt="avatar"></div>
+          <div class="h2 about-me__title">Андрей Азимов</div>
+          <div class="span about-me__description">Личный сайт веб-разработчика</div>
+        </div>
+      </div>
+    </header>
+    <footer class="footer"></footer>
   </body>
 </html>
