@@ -1,4 +1,4 @@
 const slider = require('./common/slider');
-const $ = require('jquery');
+//const $ = require('jquery');
 
 slider(); 

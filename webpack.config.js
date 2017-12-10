@@ -8,9 +8,20 @@ const config = {
     plugins: [
         new UglifyJSPlugin({
             sourceMap: true,
-            extractComments: false
         })
-    ]
+    ],
+    module: {
+        rules: [
+            {
+                test: /\.js$/,
+                enforce: "pre",
+                loader: "eslint-loader",
+                options: {
+                    fix: true
+                }
+            }
+        ]
+    }
 };
 
 module.exports = config;

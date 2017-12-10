@@ -56,6 +56,8 @@ function images() {
 
 function scripts() {
     return gulp.src("./src/scripts/app.js")
+       // .pipe(gp.eslint())
+       // .pipe(gp.eslint.format())
         .pipe(gulpWebpack(webpackConfig, webpack))
         .pipe(gulp.dest(paths.scripts.dist))
 }
@@ -91,6 +93,8 @@ exports.styles = styles;
 exports.images = images;
 exports.fonts = fonts;
 exports.clean = clean;
+exports.scripts = scripts;
+
 
 gulp.task('default', gulp.series(
     clean,

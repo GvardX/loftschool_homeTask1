@@ -8,6 +8,8 @@
 @import 'common/about-me';
 @import 'common/header';
 @import 'pages/welcome';
+@import 'pages/about';
+
 
 
 
@@ -34,7 +36,13 @@ body{
     margin: 0 auto;
 }
 .h2{
+    font-size: 6.3rem;
+}
+.h3{
     font-size: 3.5rem;
+}
+.h4{
+    font-size: 2.8rem;
 }
 .p,.span{
     font-size: 1.6rem;
