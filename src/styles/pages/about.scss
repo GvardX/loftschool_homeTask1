@@ -1,7 +1,7 @@
 .about{
     display: flex;
     &-left, &-right{
-        width: 50vw;
+        width: 50%;
         
     }   
 }
@@ -14,18 +14,17 @@
     width: 43.3rem;
     height: 39.1rem;
     overflow: hidden;
+    margin-bottom: 4rem;
     &__img{
         width: 100%;
         height: 100%;
     }
 }
 .about-right, .about-left{
-    padding: 0.5em 8rem 4rem;
     position: relative;
     z-index: 10;
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    
     &:before{
         content: '';
         display: block;
@@ -36,25 +35,65 @@
         z-index: -5;
         top: -16.8rem;
         background-size: cover;
+        
     }
 }
 .about-left{
     background-color: #F0EFE9;
+    position: relative;
+    padding-bottom: 5.5rem;
+    padding-top: 2rem;
+    justify-content: space-around;
     &:before{
-        background-image: url(../images/icons/about_bg_left.svg);
+        background-image: url(../images/icons/about_bg_white.svg);
 
     }
     
 }
 .about-right{
     background-color: #EFEBE0;
+    flex-direction: column;
+    
+
     &:before{
-        background-image: url(../images/icons/about_bg_right.svg);
-        top: -16.3rem;
+        background-image: url(../images/icons/about_bg_beige.svg);
+        transform: scaleX(-1);
     }
 }
 .about_flex{
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+.about-title{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 35.3rem;
+    height: 12rem;
+    top: -4rem;
+    &::after{
+        content: '';
+        width: 100%;
+        height: 100%;
+        background-image: url(../images/icons/about_header.svg);
+        background-size: cover;
+        position: absolute;
+        opacity: 0.06;
+        top: -2rem;
+    }
+    
+
+}
+.who-am-i{
+    width: 44.3rem;
+}
+
+.my-achievements{
+    margin-bottom: 5.5rem;
+}
+.my-data{
+    padding-right: 6.4rem;
+    padding-left: 3.9rem;
 }

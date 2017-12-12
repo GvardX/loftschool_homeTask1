@@ -13,58 +13,88 @@
     <script src="assets/scripts/bundle.js" defer></script>
   </head>
   <body>
-    <header class="header">
-      <div class="top-line">
-        <ul class="socials">
-          <li class="socials__item socials__item_white"><a class="socials__link"> <i class="fa fa-vk"></i></a></li>
-          <li class="socials__item socials__item_white"><a class="socials__link"><i class="fa fa-github"></i></a></li>
-          <li class="socials__item socials__item_white"><a class="socials__link"><i class="fa fa-instagram"></i></a></li>
-        </ul>
-        <div class="hamburger"></div><img class="hamburger_img" src="assets/images/icons/hamburger.svg" alt="hamburger">
-      </div>
-      <div class="portfolio">
-        <div class="about-me about-me__white">
-          <div class="about-me__img"><img src="assets/images/avatar.png" alt="avatar"></div>
-          <div class="h3 about-me__title">Андрей Азимов</div>
-          <div class="span about-me__description">Личный сайт веб-разработчика</div>
-        </div>
-      </div>
-      <div class="arrow-down"><a class="arrow-down__link" href="#"><img class="arrow-down__img" src="assets/images/icons/arrow_down.svg" alt="arrow"></a></div>
-    </header>
-    <section class="about">
-      <div class="about-left">
-        <div class="main-title">
-          <div class="h2">Обо мне</div>
-        </div>
-        <div class="who-am-i">
-          <div class="who-am-i-avatar"><img class="who-am-i-avatar__img" src="assets/images/avatar.png"></div>
-          <div class="who-am-i-info about_flex">
-            <h3 class="h3 who-am-i-info__title">Кто я</h3>
-            <div class="who-am-i-info_description">
-              <p class="p"></p>Я веб разработчик из Новосибирска. Мне 27 лет. Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
-              <p class="p"></p>Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
+    <div class="wrapper">
+      <div class="container">
+        <div class="content">
+          <header class="header">
+            <div class="top-line">
+              <ul class="socials">
+                <li class="socials__item socials__item_white"><a class="socials__link"> <i class="fa fa-vk"></i></a></li>
+                <li class="socials__item socials__item_white"><a class="socials__link"><i class="fa fa-github"></i></a></li>
+                <li class="socials__item socials__item_white"><a class="socials__link"><i class="fa fa-instagram"></i></a></li>
+              </ul>
+              <div class="hamburger header__menu"></div><img class="hamburger_img" src="assets/images/icons/hamburger.svg" alt="hamburger">
             </div>
-          </div>
+            <div class="portfolio">
+              <div class="about-me about-me__white">
+                <div class="about-me__img"><img src="assets/images/avatar.png" alt="avatar"></div>
+                <div class="h3 about-me__title">Андрей Азимов</div>
+                <div class="span about-me__description">Личный сайт веб-разработчика</div>
+              </div>
+            </div>
+            <div class="arrow-down header__arrow"><a class="arrow-down__link" href="#"><img class="arrow-down__img" src="assets/images/icons/arrow_down.svg" alt="arrow"></a></div>
+          </header>
+          <section class="about">
+            <div class="about-left">
+              <div class="about-title">
+                <h2 class="about-title__text main-title h2">Обо мне</h2>
+              </div>
+              <div class="who-am-i">
+                <div class="who-am-i-avatar"><img class="who-am-i-avatar__img" src="assets/images/avatar.png"></div>
+                <div class="who-am-i-info about_flex">
+                  <h3 class="h3 who-am-i-info__title text-subtitle">Кто я</h3>
+                  <div class="who-am-i-info_description">
+                    <p class="p"></p>Я веб разработчик из Новосибирска. Мне 27 лет. Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
+                    <p class="p"></p>Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="about-right">
+              <div class="my-data">
+                <div class="my-achievements about_flex">
+                  <h3 class="h3 my-achievements__title text-subtitle">Чем я могу быть полезен</h3>
+                  <p class="p my-achievements_description"></p>Больше всего меня привлекет Frontend разработка, но я также знаком и могу решать не сложные задачи на Backend. Но давайте по порядку.
+                </div>
+                <div class="my-statistics">
+                  <div class="my-statistics-frontend">
+                    <h4 class="h4 my-staistics__title">Frontend</h4>
+                  </div>
+                  <div class="my-statistics-backend">
+                    <h4 class="h4 my-staistics__title">Backend</h4>
+                  </div>
+                  <div class="my-statistics-workflow">
+                    <h4 class="h4 my-staistics__title">Workflow</h4>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <footer class="footer">
+            <div class="footer-row border-line">
+              <div class="footer-col">
+                <ul class="main-menu main-menu__footer">
+                  <li class="main-menu__item main-menu__item_footer"><a class="main-menu__link" href="#">Мои работы</a></li>
+                  <li class="main-menu__item main-menu__item_footer"><a class="main-menu__link" href="#">Обо мне</a></li>
+                  <li class="main-menu__item main-menu__item_footer"><a class="main-menu__link" href="#">Блог</a></li>
+                  <li class="main-menu__item main-menu__item_footer"><a class="main-menu__link" href="#">Авторизация</a></li>
+                </ul>
+              </div>
+              <div class="footer-col">
+                <ul class="socials">
+                  <li class="socials__item socials_rounded"><a class="socials__link"> <i class="fa fa-vk"></i></a></li>
+                  <li class="socials__item socials_rounded"><a class="socials__link"><i class="fa fa-github"></i></a></li>
+                  <li class="socials__item socials_rounded"><a class="socials__link"><i class="fa fa-instagram"></i></a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="footer-row">
+              <div class="footer-col"><span class="footer-text"></span>Я веб-разработчик из Курска, и этот сайт я сделал в рамках<br> <span class="span">обучения в Школе онлайн образования LoftSchool. </span></div>
+              <div class="footer-col"><span class="footer-text"></span>© Владимир Астахов | создано с любовью в LoftSchool | 2016</div>
+            </div>
+          </footer>
         </div>
       </div>
-      <div class="about-right">
-        <div class="my-achievements about_flex">
-          <h3 class="h3 my-achievements__title">Чем я могу быть полезен</h3>
-          <p class="p my-achievements_description"></p>Больше всего меня привлекет Frontend разработка, но я также знаком и могу решать не сложные задачи на Backend. Но давайте по порядку.
-        </div>
-        <div class="my-statistics">
-          <div class="my-statistics-frontend">
-            <h4 class="h4 my-staistics__title">Frontend</h4>
-          </div>
-          <div class="my-statistics-backend">
-            <h4 class="h4 my-staistics__title">Backend</h4>
-          </div>
-          <div class="my-statistics-workflow">
-            <h4 class="h4 my-staistics__title">Workflow</h4>
-          </div>
-        </div>
-      </div>
-    </section>
-    <footer class="footer"></footer>
+    </div>
   </body>
 </html>
