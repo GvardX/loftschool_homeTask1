@@ -23,14 +23,30 @@
     }
 }
 .socials__item_green{
-    color: $greenLight;
-    &:hover{
-        color: $greenDark;
+    .socials__link{
+        color: $greenLight;
     }
+    
+    &:hover{
+        .socials__link{
+            color: $greenDark;
+    }
+}
 }
 .socials__item_white{
         color: rgba(#fff, .5);
     &:hover{
         color: #fff;   
     }
+}
+.socials__item_white{
+    .socials__link{
+        color: rgba(#fff, .5);
+    }
+    
+    &:hover{
+        .socials__link{
+            color: #fff;
+    }
+}
 }

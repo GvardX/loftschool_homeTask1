@@ -10,6 +10,10 @@
 @import 'common/footer';
 @import 'pages/welcome';
 @import 'pages/about';
+@import 'pages/blog';
+@import 'pages/my-works';
+
+
 
 
 
@@ -60,6 +64,10 @@ body{
 }
 .p,.span{
     font-size: 1.6rem;
+}
+ul{
+    padding: 0;
+    margin: 0;
 }
 li{
     list-style-type: none;
