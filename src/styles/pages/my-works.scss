@@ -1,0 +1,37 @@
+.my-works__title{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 1rem;
+    background-color: #FBF8F1;
+    &:after{
+        content: ''; 
+        display: block;
+        height: 100%;
+        width: 100%;
+        background-image: url(../images/icons/bg.svg);
+        background-repeat: no-repeat;  
+        background-size: cover;    
+        top: -13rem;
+        position: absolute;
+    }
+    
+}
+.my-works-title-bg{
+    position: relative;
+    width: 50rem;
+    //height: 12rem;  top: -4rem;
+    &::after{
+        content: ''; 
+        display: block;
+        height: 100%;
+        width: 100%;
+        background-image: url(../images/icons/works_header.svg);
+        background-size: contain;
+        background-repeat: no-repeat;
+        position: absolute;
+        opacity: 0.06;
+        top: 0;
+    }
+}

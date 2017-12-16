@@ -4,33 +4,34 @@ block variables
     - var title = "Обо мне"
 
 block content
-    include ../common/header
-    section.about
-        .about-left
-            .about-title
-                h2.about-title__text.main-title.h2 Обо мне
-            .who-am-i
-                .who-am-i-avatar
-                    img.who-am-i-avatar__img(src="assets/images/avatar.png")
-                .who-am-i-info.about_flex
-                    h3.h3.who-am-i-info__title.text-subtitle Кто я
-                    .who-am-i-info_description
-                        p.p
-                        | Я веб разработчик из Новосибирска. Мне 27 лет. Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
-                        p.p
-                        | Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
-        .about-right
-            .my-data
-                .my-achievements.about_flex
-                    h3.h3.my-achievements__title.text-subtitle Чем я могу быть полезен
-                    p.p.my-achievements_description
-                    | Больше всего меня привлекет Frontend разработка, но я также знаком и могу решать не сложные задачи на Backend. Но давайте по порядку.
-                .my-statistics
-                    .my-statistics-frontend
-                        h4.h4.my-staistics__title Frontend
-                    .my-statistics-backend
-                        h4.h4.my-staistics__title Backend
-                    .my-statistics-workflow
-                        h4.h4.my-staistics__title Workflow
+    .content
+        include ../common/header
+        section.about
+            .about-left
+                .about-title
+                    h2.h2.about-title__text.main-title.title-bg Обо мне
+                .who-am-i
+                    .who-am-i-avatar
+                        img.who-am-i-avatar__img(src="assets/images/avatar.png")
+                    .who-am-i-info.about_flex
+                        h3.h3.who-am-i-info__title.text-subtitle Кто я
+                        .who-am-i-info_description
+                            p.p
+                            | Я веб разработчик из Новосибирска. Мне 27 лет. Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
+                            p.p
+                            | Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
+            .about-right
+                .my-data
+                    .my-achievements.about_flex
+                        h3.h3.my-achievements__title.text-subtitle Чем я могу быть полезен
+                        p.p.my-achievements_description
+                        | Больше всего меня привлекет Frontend разработка, но я также знаком и могу решать не сложные задачи на Backend. Но давайте по порядку.
+                    .my-statistics
+                        .my-statistics-frontend
+                            h4.h4.my-staistics__title Frontend
+                        .my-statistics-backend
+                            h4.h4.my-staistics__title Backend
+                        .my-statistics-workflow
+                            h4.h4.my-staistics__title Workflow
     include ../common/footer
     

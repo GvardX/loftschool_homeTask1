@@ -4,7 +4,21 @@ block variables
     - var title = "Мои работы"
 
 block content
-    include ../common/header.pug
-    include ../common/slider.pug
+    .content
+        include ../common/header.pug
+        section.my-works
+            .my-works__title
+                .my-works-title-bg
+                    h2.h2.main-title Мои работы
+            include ../common/slider
+        section.form
+            .form__wrap
+                .my-works-title-bg
+                    h2.h2.main-title Что обо мне говорят
+                .form__comments.comments
+                    p.p 
+                        | Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
+                    
     include ../common/footer
-    
+
+        

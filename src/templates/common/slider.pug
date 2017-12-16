@@ -1,11 +1,22 @@
-.container
-    ul#slides
-        li.slide.showing
-        li.slide
-        li.slide
-        li.slide
-    .buttons
-        button.controls#previous &lt;
-        button.controls#next &gt;
-        
+.slider
+    .slider-info
+        .slider-info__wrap
+            h3.h3.main-title.slider-info__title
+                | Сайт школы онлайн образования
+            .slider-info__lang 
+                | Html, css, javascript
+            button.slider-info-btn
+                a(href="#").slider-info-btn__link 
+                    | Посмотреть сайт
+    .slider-show
+        .slider-show__wrap
+            img.slider-show__img(src="assets/images/work-1.png" alt='work-1')
+    .slider-btns
+        button.slider-button.slider-button_prev
+            .slider-button__wrap
+                img.slider-button__img(src="assets/images/work-2.png" alt='work-2')        
+        button.slider-button.slider-button_next
+            .slider-button__wrap
+                img.slider-button__img(src="assets/images/work-3.png" alt='work-3')
+            
         

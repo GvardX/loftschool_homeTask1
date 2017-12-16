@@ -1,12 +1,16 @@
 extends ../template
 
 block variables
+include ../common/mixins
+
+
+block variables
     - var title = "Добро пожаловать"
 block content
-    section.welcome
-        button.button
-            a.button__link(href="#") Авторизоваться
-        .block-wrapper
+    .content
+        section.welcome
+            button.button 
+                span.span Авторизоватьcя
             .block-info
                 .about-me__wrapper
                     .about-me
@@ -22,4 +26,6 @@ block content
                         a.menu__link(href="about.html") Обо мне
                     li.menu__item
                         a.menu__link(href="blog.html") Блог
-                        
+    .footer-welcome
+        .footer-text
+    | © Владимир Астахов | создано с любовью в LoftSchool | 2016        

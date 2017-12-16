@@ -1,29 +1,27 @@
-.menu{
+.menu {
     padding: 0;
     margin: 0;
     display: flex;
-    border-radius: 0 0 5px 5px;
-    &__item{
+    &__item {
         width: 100%;
         list-style-type: none;
         background-color: $greenLight;
-        padding: 1.4rem 3.2rem;
         transition: .25s;
-        border-radius: 0 0 5px 5px;
-        &:nth-child(2){
+        &:nth-child(2) {
             border-right: 2px solid rgba(#dee3e7, .5);
             border-left: 2px solid rgba(#dee3e7, .5);
-            border-radius: none;
         }
     }
-    &__link{
+    &__link {
         color: #fff;
         font-size: 1.6rem;
         white-space: nowrap;
         font-weight: 600;
+        padding: 1.4rem 3.2rem;
     }
 }
-.menu__item{
+
+.menu__item {
     &:hover {
         background-color: $greenDark;
         cursor: pointer;
