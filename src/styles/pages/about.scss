@@ -98,3 +98,46 @@
     padding-right: 6.4rem;
     padding-left: 3.9rem;
 }
+.cont-icon{
+    fill: $greenLight;
+    width: 1.9rem;
+    height: 2.4rem;
+}
+.map{
+    height: 100vh;
+    background-image: url(../images/map.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.contacts{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #fcfcfc;
+    opacity: 0.85;
+    padding: 3.5rem 4rem 4rem;
+    border-radius: 0.5rem;
+}
+.my-contacts{
+    display: flex;
+    flex-direction: column;
+}
+
+.contacts-row{
+    display: flex;
+    align-items: center;
+    margin-bottom: 2.8rem;
+    &__icon{
+        margin-right: 1rem;
+    }
+    &__content{
+        opacity: 0.85;
+    }
+}
+

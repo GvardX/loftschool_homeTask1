@@ -18,20 +18,154 @@
     }
     
 }
-.my-works-title-bg{
+.title-bg{
     position: relative;
     width: 50rem;
-    //height: 12rem;  top: -4rem;
     &::after{
         content: ''; 
         display: block;
         height: 100%;
         width: 100%;
-        background-image: url(../images/icons/works_header.svg);
         background-size: contain;
         background-repeat: no-repeat;
+        background-position: center;
         position: absolute;
         opacity: 0.06;
         top: 0;
+    }
+}
+
+.form{
+    //height: 100vh;
+    background-image: url(../images/bg-form1-png.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    padding: 3rem 0 10rem;
+    &__wrap{
+       // max-width: 78rem;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+.comments{
+    display: flex;
+    text-align: left; 
+    &-block{
+        max-width: 37rem;
+        display: flex;
+        flex-direction: column;
+        &:last-child{
+            margin-left: 3.7rem;
+        }
+        .p{
+            line-height: 2.6rem;
+        }
+    }
+}
+.form__comments{
+    margin-bottom: 7rem;
+}
+ 
+.man-dates{
+    display: flex;
+    align-items: center;
+    &__wrap{
+        display: flex;
+        align-items: center;
+
+    }
+    &__description{
+        display: flex;justify-content: center;
+        flex-direction: column;
+        align-items: flex-start;
+        margin-left: 2.2rem;
+        margin-bottom: 1.5rem;
+        .span{
+            color: $greenLight;
+        }
+        .man-dates__name{
+            font-weight: 600;
+        }
+
+    }
+}
+.connect{
+    position: relative;
+    background-color: #bdaea0;
+    border-radius: 0.7rem;
+    
+}
+.connect__content{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 10;
+    padding: 3rem 2rem 0;
+    
+    
+}
+.connect__bg{
+    position: absolute;
+    display: block;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #fff;
+    filter: blur(5px);
+    z-index: 1;
+    opacity: 0.2
+
+}
+.form_btns-block{
+    display: flex;
+    width: 100%;
+    position: relative;
+    z-index: 10;
+    .form_btn{
+        display: block;
+        border: none;
+        width: 50%;
+    
+    }
+}
+.input{
+    border: none;
+    height: 4.5rem;
+    margin-bottom: 2rem;
+    border-radius: 0.5rem;
+    padding: 1.6rem 1.9rem;
+}
+.textarea{
+    height: 14rem;
+}
+.form__subtitle, .form-__title{
+    margin: 0;
+}
+.form__title{
+    width: 29rem;
+}
+.form__subtitle{
+    margin-bottom: 3.9rem;
+}
+.title-bg__my-works{
+    display: flex;
+    justify-content: center;
+    &::after{    
+        background-image: url(../images/icons/works_header.svg);
+    }
+    
+}
+.title-bg__about{
+    display: flex;
+    justify-content: center;
+    &::after{    
+        background-image: url(../images/icons/about_header.svg);
     }
 }

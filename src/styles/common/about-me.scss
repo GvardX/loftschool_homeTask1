@@ -18,10 +18,7 @@
         margin-bottom: 3.5rem;
         opacity: 0.8;
     }
-    &__img {
-        width: 14.1rem;
-        height: 14.1rem;
-        border-radius: 50% 50%;
+    &__img-rounded {     
         overflow: hidden;
         margin-bottom: 2rem;
         img {
@@ -29,4 +26,16 @@
             height: 100%;
         }
     }
+}
+.img-rounded_size_big{
+    width: 14.1rem;
+    height: 14.1rem;
+}
+
+.img-rounded_size_small{
+    width: 7.7rem;
+    height: 7.7rem;
+}
+.img-rounded{
+    border-radius: 50% 50%;
 }

@@ -33,5 +33,17 @@ block content
                             h4.h4.my-staistics__title Backend
                         .my-statistics-workflow
                             h4.h4.my-staistics__title Workflow
+    
+        section.map
+            .map__contacts.contacts
+                h3.h3.contacts__title.main-title Контакты
+                ul.contacts__list.my-contacts 
+                    each contact, index in {skype:'alphak8', envelope:'gvardx@gmail.com', phone:'+7 919 277 54 04', map_marker:'г. Белгород, ул. Молодежная 14, кв. 136' }
+                        li.contacts__item.contacts-row
+                            .contacts-row__icon
+                                svg(class= "cont-icon "+index)
+                                    use(xlink:href= "assets/images/sprite.svg#"+index)
+                            span.contacts-row__content #{contact}
+
     include ../common/footer
     

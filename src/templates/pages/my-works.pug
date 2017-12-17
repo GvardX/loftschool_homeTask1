@@ -8,17 +8,50 @@ block content
         include ../common/header.pug
         section.my-works
             .my-works__title
-                .my-works-title-bg
+                .title-bg.title-bg__my-works
                     h2.h2.main-title Мои работы
             include ../common/slider
         section.form
             .form__wrap
-                .my-works-title-bg
-                    h2.h2.main-title Что обо мне говорят
+                .title-bg.title-bg__about
+                    h2.h2.main-title.form__title Что обо мне говорят
                 .form__comments.comments
-                    p.p 
-                        | Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
-                    
+                    .comments-block
+                        p.p.comments__paragraph 
+                            | Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
+                        .comments__man-dates.man-dates
+                            .man-dates__wrap
+                                .man-dates_photo.about-me__img-rounded.img-rounded.img-rounded_size_small
+                                    img(src="assets/images/photo1_comment.png", alt="avatar")
+                                .man-dates__description
+                                    span.span.man-dates__name Ковальчук Дмитрий
+                                    span.span.man-dates__info основатель Loftschool
+                    .comments-block
+                        p.p.comments__paragraph 
+                            | Этот код выдержит любые испытания. Только пожалуйста, не загружается сайт на слишком старых браузерах!
+                        .comments__man-dates.man-dates        
+                            .man-dates__wrap
+                                .man-dates_photo.about-me__img-rounded.img-rounded.img-rounded_size_small
+                                    img(src="assets/images/photo2_comment.png", alt="avatar")
+                                .man-dates__description
+                                    span.span.man-dates__name Сабанцев Владимир
+                                    span.span.man-dates__info преподаватель
+                form.form_connect.connect
+                    .connect__bg
+                    .connect__content
+                        h3.h3.main-title.text__subtitle.main-title Связаться со мной
+                        input.input(type="text", name="name" placeholder="Имя")
+                        input.input(type="email", name="name" placeholder="Email")
+                        textarea.input.textarea(name="comment" placeholder="Ваше сообщение")
+                    .form_btns-block
+                        button.slider-info-btn.form_btn
+                            span.slider-info-btn__link 
+                                | Отправить
+                        button.slider-info-btn.form_btn
+                            span.slider-info-btn__link 
+                                | Очистить
+
+                                
     include ../common/footer
 
         

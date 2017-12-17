@@ -4,7 +4,11 @@ const gulp = require("gulp"),
       webpack = require("webpack"),
       webpackConfig = require("./webpack.config.js"),
       gulpWebpack = require('gulp-webpack'),
-      gp = require("gulp-load-plugins")();
+      gp = require("gulp-load-plugins")(),
+      svgSprite = require('gulp-svg-sprite'),
+      svgmin = require('gulp-svgmin'),
+      cheerio = require('gulp-cheerio'),
+      replace = require('gulp-replace');
     
 const paths = {
     root: './build',
@@ -88,12 +92,54 @@ function server() {
     browserSync.watch(paths.root + '/**/*.*', browserSync.reload);
 }
 
+
+
+function sprite() {
+
+    const config = {
+        mode: {
+          symbol: {
+            sprite: "../sprite.svg",
+            example: {
+              dest: '../tmp/spriteSvgDemo.html' // демо html
+            }
+          }
+        }
+      };
+
+  return gulp.src('src/images/icons/*.svg')
+    // минифицируем svg
+    .pipe(svgmin({
+      js2svg: {
+        pretty: true
+      }
+    }))
+    // удалить все атрибуты fill, style and stroke в фигурах
+    .pipe(cheerio({
+      run: function($) {
+        $('[fill]').removeAttr('fill');
+        $('[stroke]').removeAttr('stroke');
+        $('[style]').removeAttr('style');
+      },
+      parserOptions: {
+        xmlMode: true
+      }
+    }))
+    // cheerio плагин заменит, если появилась, скобка '&gt;', на нормальную.
+    .pipe(replace('&gt;', '>'))
+    // build svg sprite
+    .pipe(svgSprite(config))
+    .pipe(gulp.dest('build/assets/images'));
+};
+
 exports.templates = templates;
 exports.styles = styles;
 exports.images = images;
 exports.fonts = fonts;
 exports.clean = clean;
 exports.scripts = scripts;
+exports.sprite = sprite;
+
 
 
 gulp.task('default', gulp.series(

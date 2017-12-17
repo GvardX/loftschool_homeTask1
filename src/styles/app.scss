@@ -97,14 +97,26 @@
     
     .main-title,
     .text-subtitle {
+        position: relative;
         font-family: $bernier;
-        display: flex;
-        justify-content: center;
-        align-items: center;
         font-weight: normal;
         &::before,
         &::after {
-            margin-top: -4rem;
+            content: "";
+            position: absolute;
+            display: block;
+            width: 2.2rem;
+            height: 0.5rem;
+            background-color: $greyLight;
+            opacity: 0.2;
+        }
+        &::before{
+            top: 1.7rem;
+            left: -4rem;;
+        }
+        &::after{
+            bottom: 1.7rem;
+            right: -4rem;
         }
     }
     
