@@ -5,17 +5,21 @@
                 | Сайт школы онлайн образования
             .slider-info__lang 
                 | Html, css, javascript
-            button.slider-info-btn
+            button.slider-info-btn.button_radius
                 a(href="#").slider-info-btn__link 
                     | Посмотреть сайт
     .slider-show
         .slider-show__wrap
             img.slider-show__img(src="assets/images/work-1.png" alt='work-1')
     .slider-btns
-        button.green-button.slider-button.slider-button_prev
+        button.slider-button.slider-button_prev
+            svg.portf-arrow
+                use(xlink:href="assets/images/sprite.svg#portf_arrow_down")
             .slider-button__wrap
                 img.slider-button__img(src="assets/images/work-2.png" alt='work-2')        
         button.slider-button.slider-button_next
+            svg.portf-arrow
+                use(xlink:href="assets/images/sprite.svg#portf_arrow_up")
             .slider-button__wrap
                 img.slider-button__img(src="assets/images/work-3.png" alt='work-3')
             

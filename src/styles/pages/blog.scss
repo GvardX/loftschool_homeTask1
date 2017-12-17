@@ -1,13 +1,13 @@
 .blog {
     display: flex;
-    padding-top: 7rem;
 }
-
+.blog__content + .footer{
+    position: static;
+}
 .blog-menu__left {
-    padding-right: 10.7rem ;
-    padding-left: 13.4rem;
     position: relative;
     z-index: 10;
+    padding: 7rem 10.7rem 0 13.4rem; 
 }
 .header-blog{
     .header{
@@ -18,7 +18,7 @@
 article {
     max-width: 98rem;
     position: relative;
-    padding-bottom: 7rem;
+    padding: 7rem 0;
     &::after {
         content: '';
         display: block;
@@ -39,6 +39,11 @@ article {
         padding-right: 1.7rem;
         transition: .25s;
         text-align: right;
+        &:after{
+            content: '';
+            transition: .25s;
+            opacity: 0;
+        }
         &:hover,
         &:active {
             position: relative;
@@ -54,6 +59,7 @@ article {
                 right: 0;
                 bottom: 0;
                 background-color: $greenLight;
+                opacity: 1;
             }
         }
     }
@@ -61,7 +67,6 @@ article {
 
 a.blog-menu__link {
     color: $greyLight;
-    transition: .25s;
     line-height: 2.6rem;
 }
 
@@ -131,4 +136,10 @@ a.blog-menu__link {
         position: absolute;
        // z-index: -5;
     }
+}
+.blog-article__paragraphs{
+    margin-bottom: 1.6rem;
+}
+.blog__triangle{
+    fill: #fff;
 }

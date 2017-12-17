@@ -2,10 +2,13 @@ mixin socials(name)
     ul.socials
         li(class= 'socials__item '+name)
             a(href="https://vk.com/sakhalinkholmsk").socials__link 
-                i.fa.fa-vk
+                svg.socials__img(class= "soc-icon")
+                    use(xlink:href= "assets/images/sprite.svg#vk")
         li(class= 'socials__item '+name)
-            a(href="https://github.com/GvardX").socials__link
-                i.fa.fa-github
+            a(href="https://vk.com/sakhalinkholmsk").socials__link 
+                svg.socials__img(class= "soc-icon")
+                    use(xlink:href= "assets/images/sprite.svg#github")
         li(class= 'socials__item '+name)
-            a(href="#").socials__link
-                i.fa.fa-instagram
+            a(href="https://vk.com/sakhalinkholmsk").socials__link 
+                svg.socials__img(class= "soc-icon")
+                    use(xlink:href= "assets/images/sprite.svg#in")

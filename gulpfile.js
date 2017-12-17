@@ -21,7 +21,7 @@ const paths = {
         dist: 'build/assets/styles/'        
     },
     images: {
-        src: 'src/images/**/*.*',
+        src: 'src/images/*.*',
         dist: 'build/assets/images/'
     },
     scripts: {
@@ -31,6 +31,10 @@ const paths = {
     fonts: {
         src: 'src/fonts/**/*.*',
         dist: 'build/assets/fonts'
+    },
+    sprite: {
+        src: 'src/images/icons/**/*.svg',
+        dist: 'build/assets/images'
     }
 }
 
@@ -82,6 +86,8 @@ function watch() {
     gulp.watch(paths.images.src, images);
     gulp.watch(paths.fonts.src, fonts);
     gulp.watch(paths.scripts.src, scripts);
+    gulp.watch(paths.sprite.src, sprite);
+    
 }
 
 
@@ -107,7 +113,7 @@ function sprite() {
         }
       };
 
-  return gulp.src('src/images/icons/*.svg')
+  return gulp.src(paths.sprite.src)
     // минифицируем svg
     .pipe(svgmin({
       js2svg: {
@@ -129,7 +135,7 @@ function sprite() {
     .pipe(replace('&gt;', '>'))
     // build svg sprite
     .pipe(svgSprite(config))
-    .pipe(gulp.dest('build/assets/images'));
+    .pipe(gulp.dest(paths.sprite.dist));
 };
 
 exports.templates = templates;
@@ -144,6 +150,6 @@ exports.sprite = sprite;
 
 gulp.task('default', gulp.series(
     clean,
-    gulp.parallel(styles, templates, images, fonts, scripts),
+    gulp.parallel(styles, templates, images, fonts, scripts, sprite),
     gulp.parallel(watch, server)
 ));

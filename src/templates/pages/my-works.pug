@@ -7,6 +7,10 @@ block content
     .content
         include ../common/header.pug
         section.my-works
+            .triangle.my-works__triangle
+                svg.triangle-pic(xmlns="http://www.w3.org/2000/svg" viewbox="0 0 1000 85" preserveaspectratio="none")
+                    polygon(class = 'left' points="0,0 0,86 500.8,86 500.8,75.5")
+                    polygon(class = 'right' points="1000,0 1000,86 500,86 500,75.5")
             .my-works__title
                 .title-bg.title-bg__my-works
                     h2.h2.main-title Мои работы
@@ -50,6 +54,9 @@ block content
                         button.slider-info-btn.form_btn
                             span.slider-info-btn__link 
                                 | Очистить
+                .arrow-up
+                    svg.arrow-down__img
+                        use(xlink:href="assets/images/sprite.svg#arrow_down")
 
                                 
     include ../common/footer

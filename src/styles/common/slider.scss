@@ -48,14 +48,21 @@
     }
     &-btn{
         border: none;  
-        background-color: $greenLight;      
-        border-radius: 0.4rem;
+        background-color: $greenLight;
+        cursor: pointer;  
+        transition: .25s;
+        &:hover{
+            background-color: $greenDark; 
+        }     
         &__link{
             display: block;
             color: #fff;
             padding: 1.5rem 2rem;
         }
     } 
+}
+.button_radius{
+    border-radius: 0.4rem;
 }
 .slider-show{
     grid-area: disp;
@@ -79,6 +86,22 @@
 }
 .slider-btns{
     display: flex;
+    position: relative;
+}
+.portf-arrow{
+    position: absolute;
+    z-index: 5;
+    width: 4.3rem;
+    height: 2.7rem;
+    fill: #fff;
+    opacity: 0.7;
+    transition: .25s;
+    top: 50%;
+    transform: translate(-50% -50%);
+    cursor: pointer;
+    &:hover {
+        opacity: 1;
+    }
 }
 .slider-button{
     width: 50%;
@@ -87,6 +110,7 @@
     display: flex;
     justify-content: center;
     overflow: hidden;
+    border: none;
     &::after{
         content: '';
         position: absolute;
@@ -98,12 +122,12 @@
         
     }
     &__wrap{
-        height: auto;
-        width: 17.5rem;
+        max-height: auto;
+        max-width: 17.5rem;
         overflow: hidden;
     }
     &__img{
-        width: 100%;
+        max-width: 100%;
         
     }
 }

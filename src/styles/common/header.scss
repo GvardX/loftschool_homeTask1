@@ -51,3 +51,32 @@
 .about-me__white{
     color: #fff;
 }
+
+.hamburger{
+    &__img{
+        width: 4rem;
+        height: 3.5rem;
+        fill: rgba(#fff, .5);
+        transition: .25s;
+    }
+    &:hover{
+        cursor: pointer;
+        .hamburger__img{
+            fill: #fff;
+        }
+    }
+}
+.arrow-down{
+    &__img{
+        width: 2.6rem;
+        height: 1.6rem;
+        fill: rgba(#fff, .7);
+        transition: .25s;
+    }
+    &:hover{
+        cursor: pointer;
+        .arrow-down__img{
+            fill: #fff;
+        }
+    }
+}

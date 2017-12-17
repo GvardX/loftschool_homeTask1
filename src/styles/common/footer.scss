@@ -1,7 +1,10 @@
 .footer{
+    position: absolute;
+    bottom: 0;
     flex-direction: column;
     background-color: $greyDark;
     opacity: 0.85;
+    width: 100%;
     &-row{
         padding: 1.7rem 3rem 1.9rem;
         display: flex;
@@ -38,20 +41,4 @@
 }
 .main-menu__item_footer{
     margin-right: 4rem;
-}
-.socials_rounded{
-    border: 0.2rem solid rgba(#fff, .5);;
-    border-radius: 50%;
-    padding: 0.5rem 0.7rem;
-    
-    transition: .25s;
-    .socials__link{
-        color: rgba(#fff, .5);
-    }
-    &:hover{
-        background-color: #ffffff;
-        .socials__link{
-            color: $greyLight;
-        }
-    }
 }

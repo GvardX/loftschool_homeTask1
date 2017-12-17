@@ -1,5 +1,6 @@
 .about {
     display: flex;
+    position: relative;
     &-left,
     &-right {
         width: 50%;
@@ -13,13 +14,13 @@
 }
 
 .who-am-i-avatar {
-    width: 43.3rem;
-    height: 39.1rem;
+    max-width: 43.3rem;
+    height: auto;
     overflow: hidden;
     margin-bottom: 4rem;
     &__img {
-        width: 100%;
-        height: 100%;
+        max-width: 100%;
+        max-height: 100%;
     }
 }
 
@@ -28,37 +29,17 @@
     position: relative;
     z-index: 10;
     display: flex;
-    &:before {
-        content: '';
-        display: block;
-        background-repeat: no-repeat;
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        z-index: -5;
-        top: -13.5rem;
-        background-size: cover;
-    }
 }
 
 .about-left {
     background-color: #F0EFE9;
     position: relative;
-    padding-bottom: 5.5rem;
-    padding-top: 2rem;
-    justify-content: space-around;
-    &:before {
-        background-image: url(../images/icons/about_bg_white.svg);
-    }
+    padding: 0 2.1rem 14.4rem 5.3rem;
 }
 
 .about-right {
     background-color: #EFEBE0;
     flex-direction: column;
-    &:before {
-        background-image: url(../images/icons/about_bg_beige.svg);
-        transform: scaleX(-1);
-    }
 }
 
 .about_flex {
@@ -140,4 +121,20 @@
         opacity: 0.85;
     }
 }
-
+.triangle{
+    position: absolute;
+    top: -11.5rem;
+    height: 16.5rem;
+    width: 100%;  
+}
+.about__triangle{
+    .left{
+        fill: #efeee9;
+       //width: 100%;
+       
+       
+    }
+    .right{
+        fill: #eeebdf;;
+    }
+}
