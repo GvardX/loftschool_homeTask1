@@ -47,26 +47,7 @@
     flex-direction: column;
     align-items: center;
 }
-
-.about-title {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 35.3rem;
-    height: 12rem;
-    top: -4rem;
-    &::after{
-        content: '';
-        width: 100%;
-        height: 100%;
-        background-image: url(../images/icons/about_header.svg);
-        background-size: cover;
-        position: absolute;
-        opacity: 0.06;
-        top: -2rem;
-    }
-}  
+ 
 .who-am-i {
     width: 44.3rem;
 }
@@ -94,6 +75,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 46rem;
 }
 .contacts{
     display: flex;
@@ -105,6 +87,9 @@
     padding: 3.5rem 4rem 4rem;
     border-radius: 0.5rem;
 }
+.contacts__title{
+    margin: 0 0 3rem;;
+}
 .my-contacts{
     display: flex;
     flex-direction: column;
@@ -114,6 +99,9 @@
     display: flex;
     align-items: center;
     margin-bottom: 2.8rem;
+    &:last-child{
+        margin: 0;
+    }
     &__icon{
         margin-right: 1rem;
     }
@@ -137,4 +125,13 @@
     .right{
         fill: #eeebdf;;
     }
+}
+.my-statistics__title{
+    margin: 0;
+}
+.about__title{
+    margin: 0;
+}
+.about-title__img{
+    top: -5rem;
 }

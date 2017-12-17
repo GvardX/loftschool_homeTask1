@@ -7,6 +7,7 @@
     @import 'common/about-me';
     @import 'common/header';
     @import 'common/footer';
+    @import 'common/skills';
     @import 'pages/welcome';
     @import 'pages/about';
     @import 'pages/blog';
@@ -114,6 +115,32 @@
             background-color: $greyLight;
             opacity: 0.2;
         }
+        
+    }
+    .bg-title{
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        position: relative;
+        text-align: center;
+        &__img{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            opacity: 0.06;
+            .bg-icon{
+                width: 100%;
+            }
+}
+        
+    }
+    .bg-title_size_small{
+        width: 36rem;
+    }
+    .bg-title_size_big{
+        width: 50rem;
+    }
+    .line-h3{
         &::before{
             top: 1.7rem;
             left: -4rem;;
@@ -123,26 +150,35 @@
             right: -4rem;
         }
     }
-    .bg-title{
-        position: relative;
-        text-align: center;
-        &__img{
-            position: absolute;
-            width: 100%;
-            opacity: 0.06;
-            .bg-icon{
-                width: 100%;
-            }
-        &__text{;
+    .line-works{
+        &::before{
+            top: 3rem;
+            left: -4rem;;
         }
+        &::after{
+            bottom: 3rem;
+            right: -4.2rem;
         }
-        
     }
-    .bg-title_size_small{
-        width: 36rem;
+    .line-about-talk{
+        &::before{
+            top: 3rem;
+            left: -4rem;;
+        }
+        &::after{
+            bottom: 9.6rem;
+            right: -4.2rem;
+        }
     }
-    .bg-title_size_big{
-        width: 50rem;
+    .line-about-me{
+        &::before{
+            top: 3rem;
+            left: -4rem;;
+        }
+        &::after{
+            top: 3rem;
+            right: -3.2rem;
+        }
     }
     // Социальные иконки
     //Меню

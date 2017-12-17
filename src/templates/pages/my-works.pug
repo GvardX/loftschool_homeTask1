@@ -11,16 +11,24 @@ block content
                 svg.triangle-pic(xmlns="http://www.w3.org/2000/svg" viewbox="0 0 1000 85" preserveaspectratio="none")
                     polygon(class = 'left' points="0,0 0,86 500.8,86 500.8,75.5")
                     polygon(class = 'right' points="1000,0 1000,86 500,86 500,75.5")
-            .my-works__title
-                .title-bg.title-bg__my-works
-                    h2.h2.main-title Мои работы
+            .my-works__title.bg-title
+                .bg-title__img
+                        svg(class= "bg-icon")
+                            use(xlink:href= "assets/images/sprite.svg#works_header")
+                h2.h2.bg-title__text.main-title.my-works__text.line-works Мои работы
             include ../common/slider
         section.form
             .form__wrap
-                .title-bg.title-bg__about
-                    h2.h2.main-title.form__title Что обо мне говорят
+                .form__title.bg-title.bg-title_size_big
+                    .bg-title__img
+                        svg(class= "bg-icon")
+                            use(xlink:href= "assets/images/sprite.svg#about_header")
+                    h2.h2.bg-title__text.main-title.form__text.line-about-talk Что обо мне говорят
                 .form__comments.comments
                     .comments-block
+                        .comments__quotes
+                            svg(class= "quotes-icon")
+                                use(xlink:href= "assets/images/sprite.svg#quotes")
                         p.p.comments__paragraph 
                             | Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
                         .comments__man-dates.man-dates
@@ -31,6 +39,9 @@ block content
                                     span.span.man-dates__name Ковальчук Дмитрий
                                     span.span.man-dates__info основатель Loftschool
                     .comments-block
+                        .comments__quotes
+                            svg(class= "quotes-icon")
+                                use(xlink:href= "assets/images/sprite.svg#quotes")
                         p.p.comments__paragraph 
                             | Этот код выдержит любые испытания. Только пожалуйста, не загружается сайт на слишком старых браузерах!
                         .comments__man-dates.man-dates        

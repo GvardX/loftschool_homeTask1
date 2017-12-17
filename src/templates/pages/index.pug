@@ -7,7 +7,7 @@ include ../common/mixins
 block variables
     - var title = "Добро пожаловать"
 block content
-    .content
+    .content.welcome-content
         section.welcome
             button.button 
                 span.span Авторизоватьcя
@@ -26,6 +26,6 @@ block content
                         a.menu__link(href="about.html") Обо мне
                     li.menu__item
                         a.menu__link(href="blog.html") Блог
-    .footer-welcome
-        .footer-text
-    | © Владимир Астахов | создано с любовью в LoftSchool | 2016        
+    footer.footer-welcome
+        .footer__text
+            | © Андрей Азимов | создано с любовью в LoftSchool | 2016        

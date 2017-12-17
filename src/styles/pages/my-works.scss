@@ -20,43 +20,49 @@
         }
     }
 }
-.my-works__triangle{
-    .left, .right{
-        fill: #faf8f0;    
+.my-works__text{
+    &:before{
+        top: 3rem;
+    }
+    &:after{
+        bottom: 3rem;
     }
 }
-.title-bg{
-    position: relative;
-    width: 50rem;
-    &::after{
-        content: ''; 
-        display: block;
-        height: 100%;
-        width: 100%;
-        background-size: contain;
-        background-repeat: no-repeat;
-        background-position: center;
-        position: absolute;
-        opacity: 0.06;
-        top: 0;
-    }
-}
-
 .form{
-    //height: 100vh;
     background-image: url(../images/bg-form1-png.png);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     display: flex;
     justify-content: center;
-    padding: 3rem 0 20rem;
+    padding: 2rem 0 20rem;
     &__wrap{
-       // max-width: 78rem;
         text-align: center;
         display: flex;
         flex-direction: column;
         align-items: center;
+    }
+    &__title{
+        margin: 0 0 4rem;
+        line-height: 6.6rem;
+        
+    }
+}
+.form__text{
+    width: 29rem;
+    position: absolute;
+    top: -2rem;
+}
+
+.form__subtitle{
+    margin: 0;
+}
+.form__subtitle{
+    margin-bottom: 3.9rem;
+}
+.my-works__triangle{
+    .left, .right{
+        fill: #faf8f0;    
     }
 }
 
@@ -64,9 +70,20 @@
     display: flex;
     text-align: left; 
     &-block{
+        position: relative;
         max-width: 37rem;
         display: flex;
         flex-direction: column;
+        .comments__quotes{
+            position: absolute;
+            top: -2.9rem;
+            left: 0;
+            .quotes-icon{
+                width: 3.3rem;
+                height: 2.9rem;
+                fill: #d3d6d7;
+            }
+        }
         &:last-child{
             margin-left: 3.7rem;
         }
@@ -104,7 +121,6 @@
 }
 .connect{
     position: relative;
-    background-color: #bdaea0;
     border-radius: 0.7rem;
     margin-bottom: 7rem;
     overflow: hidden;
@@ -127,9 +143,9 @@
     left: 0;
     right: 0;
     background-color: #fff;
-    filter: blur(5px);
+    filter: blur(1rem);
     z-index: 1;
-    opacity: 0.2
+    opacity: 0.8;
 
 }
 .form_btns-block{
@@ -157,28 +173,4 @@
 }
 .textarea{
     height: 14rem;
-}
-.form__subtitle, .form-__title{
-    margin: 0;
-}
-.form__title{
-    width: 29rem;
-}
-.form__subtitle{
-    margin-bottom: 3.9rem;
-}
-.title-bg__my-works{
-    display: flex;
-    justify-content: center;
-    &::after{    
-        background-image: url(../images/icons/works_header.svg);
-    }
-    
-}
-.title-bg__about{
-    display: flex;
-    justify-content: center;
-    &::after{    
-        background-image: url(../images/icons/about_header.svg);
-    }
 }

@@ -13,15 +13,15 @@ block content
                     polygon(class = 'right' points="1000,0 1000,86 500,86 500,75.5")
             .about-left
                 .about-left__title.bg-title.bg-title_size_small
-                    .bg-title__img
+                    .bg-title__img.about-title__img
                         svg(class= "bg-icon")
                             use(xlink:href= "assets/images/sprite.svg#about_header")
-                    h2.h2.bg-title__text.main-title Обо мне
+                    h2.h2.bg-title__text.main-title.about__title.line-about-me Обо мне
                 .who-am-i
                     .who-am-i-avatar
                         img.who-am-i-avatar__img(src="assets/images/avatar.png")
                     .who-am-i-info.about_flex
-                        h3.h3.who-am-i-info__title.text-subtitle Кто я
+                        h3.h3.who-am-i-info__title.text-subtitle.line-h3 Кто я
                         .who-am-i-info_description
                             p.p
                             | Я веб разработчик из Новосибирска. Мне 27 лет. Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
@@ -30,20 +30,40 @@ block content
             .about-right
                 .my-data
                     .my-achievements.about_flex
-                        h3.h3.my-achievements__title.text-subtitle Чем я могу быть полезен
+                        h3.h3.my-achievements__title.text-subtitle.line-h3 Чем я могу быть полезен
                         p.p.my-achievements_description
                         | Больше всего меня привлекет Frontend разработка, но я также знаком и могу решать не сложные задачи на Backend. Но давайте по порядку.
                     .my-statistics
-                        .my-statistics-frontend
+                        .my-statistics-frontend.frontend
                             h4.h4.my-staistics__title Frontend
-                        .my-statistics-backend
+                                ul.frontend-row.frontend__list
+                                    each item, index in {25: "HTML &amp; CSS", 45: "CSS3", 75: "JavaScript &amp; jQuery"}
+                                        li.frontend__item.circle-item
+                                            svg(class="circles" viewBox="0 0 110 110")
+                                                circle(r="45" cx="50%" cy="50%" fill="none" class="circle__first")
+                                                circle(r="45" cx="50%" cy="50%" transform="rotate(-90 55 55)" class="circle__second circle-"+index)
+                                            span.frontend__title.circle__title #{item}
+                        .my-statistics-backend.backend
                             h4.h4.my-staistics__title Backend
-                        .my-statistics-workflow
+                                ul.frontend-row.frontend__list
+                                    each item, index in {20: "PHP", 90: "mySQL", 40: "Node.js &amp; npm", 70: "Mongo.db"}
+                                        li.backend__item.circle-item
+                                            svg(class="circles" viewBox="0 0 110 110")
+                                                circle(r="45" cx="50%" cy="50%" fill="none" class="circle__first")
+                                                circle(r="45" cx="50%" cy="50%" transform="rotate(-90 55 55)" class="circle__second circle-"+index) 
+                                            span.backend__title.circle__title #{item}                    
+                        .my-statistics-workflow.workflow
                             h4.h4.my-staistics__title Workflow
-    
+                                ul.frontend-row.frontend__list
+                                    each item, index in {35: "Git", 55: "Gulp", 80: "Bower"}
+                                        li.workflow__item.circle-item
+                                            svg(class="circles" viewBox="0 0 110 110")
+                                                circle(r="45" cx="50%" cy="50%" fill="none" class="circle__first")
+                                                circle(r="45" cx="50%" cy="50%" transform="rotate(-90 55 55)" class="circle__second circle-"+index)
+                                            span.workflow__title.circle__title #{item}
         section.map
             .map__contacts.contacts
-                h3.h3.contacts__title.main-title Контакты
+                h3.h3.contacts__title.main-title.line-h3 Контакты
                 ul.contacts__list.my-contacts 
                     each contact, index in {skype:'alphak8', envelope:'gvardx@gmail.com', phone:'+7 919 277 54 04', map_marker:'г. Белгород, ул. Молодежная 14, кв. 136' }
                         li.contacts__item.contacts-row
