@@ -47,6 +47,7 @@ article {
         &:hover,
         &:active {
             position: relative;
+
             a.blog-menu__link {
                 color: $greenLight;
             }
@@ -64,7 +65,13 @@ article {
         }
     }
 }
-
+.blog-menu__item_active{
+    &:after{
+        content: '';
+        transition: .25s;
+        opacity: 1;
+    }
+}
 a.blog-menu__link {
     color: $greyLight;
     line-height: 2.6rem;
