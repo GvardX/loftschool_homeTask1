@@ -7,17 +7,6 @@
         align-items: center;
         padding-bottom: 1rem;
         background-color: #FBF8F1;
-        &:after{
-            content: ''; 
-            display: block;
-            height: 100%;
-            width: 100%;
-            background-image: url(../images/icons/bg.svg);
-            background-repeat: no-repeat;  
-            background-size: cover;    
-            top: -13rem;
-            position: absolute;
-        }
     }
 }
 .my-works__text{
