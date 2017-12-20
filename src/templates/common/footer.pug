@@ -1,1 +1,17 @@
 footer.footer
+    .footer-row.border-line
+        .footer-col
+            ul.main-menu.main-menu__footer
+                each item in ['Мои работы', 'Обо мне', 'Блог', 'Авторизация']
+                    li.main-menu__item.main-menu__item_footer
+                        a.main-menu__link(href='#')= item
+        .footer-col
+             +socials('socials_rounded')
+        
+    .footer-row
+        .footer-col
+            span.footer-text
+            | Я веб-разработчик из Курска, и этот сайт я сделал в рамках<br> <span class="span">обучения в Школе онлайн образования LoftSchool. </span>
+        .footer-col
+            span.footer-text
+            | © Владимир Астахов | создано с любовью в LoftSchool | 2016

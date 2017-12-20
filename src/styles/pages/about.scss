@@ -1,27 +1,137 @@
-.about{
+.about {
     display: flex;
-    &-left, &-right{
-        width: 50vw;
+    position: relative;
+    &-left,
+    &-right {
+        width: 50%;
     }   
 }
-.who-am-i-avatar{
-    width: 43.3rem;
-    height: 39.1rem;
+
+.who-am-i {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.who-am-i-avatar {
+    max-width: 43.3rem;
+    height: auto;
     overflow: hidden;
-    &__img{
-        width: 100%;
-        height: 100%;
+    margin-bottom: 4rem;
+    &__img {
+        max-width: 100%;
+        max-height: 100%;
     }
 }
-.about-right, .about-left{
-    background-position: 0 -10rem;
+
+.about-right,
+.about-left {
+    position: relative;
+    z-index: 10;
+    display: flex;
 }
-.about-left{
-    background-image: url(../images/icons/about_bg_left.svg);
-    background-repeat: no-repeat;
-    
+
+.about-left {
+    background-color: #F0EFE9;
+    position: relative;
+    padding: 0 2.1rem 14.4rem 5.3rem;
 }
-.about-right{
-    background-image: url(../images/icons/about_bg_right.svg);
+
+.about-right {
+    background-color: #EFEBE0;
+    flex-direction: column;
+}
+
+.about_flex {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+ 
+.who-am-i {
+    width: 44.3rem;
+}
+
+.my-achievements {
+    margin-bottom: 5.5rem;
+}
+
+.my-data {
+    padding-right: 6.4rem;
+    padding-left: 3.9rem;
+}
+.cont-icon{
+    fill: $greenLight;
+    width: 1.9rem;
+    height: 2.4rem;
+}
+.map{
+    height: 100vh;
+    background-image: url(../images/map.jpg);
+    background-size: cover;
+    background-position: center;
     background-repeat: no-repeat;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 46rem;
+}
+.contacts{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #fcfcfc;
+    opacity: 0.85;
+    padding: 3.5rem 4rem 4rem;
+    border-radius: 0.5rem;
+}
+.contacts__title{
+    margin: 0 0 3rem;;
+}
+.my-contacts{
+    display: flex;
+    flex-direction: column;
+}
+
+.contacts-row{
+    display: flex;
+    align-items: center;
+    margin-bottom: 2.8rem;
+    &:last-child{
+        margin: 0;
+    }
+    &__icon{
+        margin-right: 1rem;
+    }
+    &__content{
+        opacity: 0.85;
+    }
+}
+.triangle{
+    position: absolute;
+    top: -11.5rem;
+    height: 16.5rem;
+    width: 100%;  
+}
+.about__triangle{
+    .left{
+        fill: #efeee9;
+       //width: 100%;
+       
+       
+    }
+    .right{
+        fill: #eeebdf;;
+    }
+}
+.my-statistics__title{
+    margin: 0;
+}
+.about__title{
+    margin: 0;
+}
+.about-title__img{
+    top: -5rem;
 }

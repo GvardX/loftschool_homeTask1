@@ -4,7 +4,11 @@ const gulp = require("gulp"),
       webpack = require("webpack"),
       webpackConfig = require("./webpack.config.js"),
       gulpWebpack = require('gulp-webpack'),
-      gp = require("gulp-load-plugins")();
+      gp = require("gulp-load-plugins")(),
+      svgSprite = require('gulp-svg-sprite'),
+      svgmin = require('gulp-svgmin'),
+      cheerio = require('gulp-cheerio'),
+      replace = require('gulp-replace');
     
 const paths = {
     root: './build',
@@ -17,7 +21,7 @@ const paths = {
         dist: 'build/assets/styles/'        
     },
     images: {
-        src: 'src/images/**/*.*',
+        src: 'src/images/*.*',
         dist: 'build/assets/images/'
     },
     scripts: {
@@ -27,6 +31,10 @@ const paths = {
     fonts: {
         src: 'src/fonts/**/*.*',
         dist: 'build/assets/fonts'
+    },
+    sprite: {
+        src: 'src/images/icons/**/*.svg',
+        dist: 'build/assets/images'
     }
 }
 
@@ -78,6 +86,8 @@ function watch() {
     gulp.watch(paths.images.src, images);
     gulp.watch(paths.fonts.src, fonts);
     gulp.watch(paths.scripts.src, scripts);
+    gulp.watch(paths.sprite.src, sprite);
+    
 }
 
 
@@ -88,16 +98,58 @@ function server() {
     browserSync.watch(paths.root + '/**/*.*', browserSync.reload);
 }
 
+
+
+function sprite() {
+
+    const config = {
+        mode: {
+          symbol: {
+            sprite: "../sprite.svg",
+            example: {
+              dest: '../tmp/spriteSvgDemo.html' // демо html
+            }
+          }
+        }
+      };
+
+  return gulp.src(paths.sprite.src)
+    // минифицируем svg
+    .pipe(svgmin({
+      js2svg: {
+        pretty: true
+      }
+    }))
+    // удалить все атрибуты fill, style and stroke в фигурах
+    .pipe(cheerio({
+      run: function($) {
+        $('[fill]').removeAttr('fill');
+        $('[stroke]').removeAttr('stroke');
+        $('[style]').removeAttr('style');
+      },
+      parserOptions: {
+        xmlMode: true
+      }
+    }))
+    // cheerio плагин заменит, если появилась, скобка '&gt;', на нормальную.
+    .pipe(replace('&gt;', '>'))
+    // build svg sprite
+    .pipe(svgSprite(config))
+    .pipe(gulp.dest(paths.sprite.dist));
+};
+
 exports.templates = templates;
 exports.styles = styles;
 exports.images = images;
 exports.fonts = fonts;
 exports.clean = clean;
 exports.scripts = scripts;
+exports.sprite = sprite;
+
 
 
 gulp.task('default', gulp.series(
     clean,
-    gulp.parallel(styles, templates, images, fonts, scripts),
+    gulp.parallel(styles, templates, images, fonts, scripts, sprite),
     gulp.parallel(watch, server)
 ));
