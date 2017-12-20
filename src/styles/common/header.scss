@@ -5,7 +5,7 @@
     background-position: center;
     background-repeat: no-repeat;
     position: relative;
-    padding: 2.8rem 3rem 6.7rem;
+    padding: 3rem 3rem 0;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -15,6 +15,17 @@
     display: flex;
     justify-content: space-between;
     width: 100%;
+    position: relative;
+    z-index: 15;
+}
+.header__arrow{
+    position: absolute;
+    z-index: 15;
+    bottom: 7rem;
+}
+.header__menu{
+    position: relative;
+    z-index: 50;
 }
 
 .portfolio{
@@ -39,6 +50,33 @@
 }
 .about-me__white{
     color: #fff;
-    position: absolute;
-    z-index: 5;
+}
+
+.hamburger{
+    &__img{
+        width: 4rem;
+        height: 3.5rem;
+        fill: rgba(#fff, .5);
+        transition: .25s;
+    }
+    &:hover{
+        cursor: pointer;
+        .hamburger__img{
+            fill: #fff;
+        }
+    }
+}
+.arrow-down{
+    &__img{
+        width: 2.6rem;
+        height: 1.6rem;
+        fill: rgba(#fff, .7);
+        transition: .25s;
+    }
+    &:hover{
+        cursor: pointer;
+        .arrow-down__img{
+            fill: #fff;
+        }
+    }
 }

@@ -1,80 +1,144 @@
-#slides{
-    margin: 0;
-    padding: 0;
-    height: 300px;
+.slider{
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 70% 30%;
+    grid-template-areas:  
+    "info disp"
+    "info btns";
+}
+
+.slider-info{
+    grid-area: info;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 24.5rem 0 21rem;
+    background-color: #f0efe9;
+    &__lang{ 
+        color: $greenLight;
+        font-weight: 500;
+        text-transform: uppercase;
+        margin-bottom: 3.9rem;
+        padding: 1.6rem 7.5rem;
+        text-align: center;
+        border-top: 1px solid $greenDark;
+        border-bottom: 1px solid $greenDark;
+        
+    }
+    &__wrap{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    &__title, .h3{
+        text-align: center;
+        width: 33rem;
+        margin-bottom: 3.8rem;
+        &::before,
+        &::after {
+            content: '';
+            display: block;
+            height: 0.5rem;
+            width: 2.2rem;
+            background-color: rgba($greyDark, .2);
+        }
+    
+    }
+    &-btn{
+        border: none;  
+        background-color: $greenLight;
+        cursor: pointer;  
+        transition: .25s;
+        &:hover{
+            background-color: $greenDark; 
+        }     
+        &__link{
+            display: block;
+            color: #fff;
+            padding: 1.5rem 2rem;
+        }
+    } 
+}
+.button_radius{
+    border-radius: 0.4rem;
+}
+.slider-show{
+    grid-area: disp;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #efebe0;
+    overflow: hidden;
+    &__wrap{
+        height: 41.6rem; 
+        overflow: hidden;
+    }
+    &__img{
+        width: auto;
+        height: 100%;
+    }
+}
+.slider-btns{
+    grid-area: btns;
+    
+}
+.slider-btns{
+    display: flex;
     position: relative;
-    list-style-type: none;
 }
-
-.slide{
-    width: 100%;
-    height: 100%;
+.portf-arrow{
     position: absolute;
-    top: 0;
-    left: 0;
-    opacity: 0;
-    z-index: 1;
-    transition: opacity 1s;
-}
-
-.showing{
-    z-index: 2;
-    opacity: 1;
-}
-
-.controls{
-    display: none;
-}
-
-.slide{
-    font-size: 40px;
-    padding: 40px;
-    box-sizing: border-box;
-    background: #333;
-    color: #fff;
-    background-size: cover;
-}
-
-.slide:nth-of-type(1){
-    background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/123941/snowy-winter-vignette-bokeh-night-snow-falling-free-stock-photo.jpg');
-}
-
-/* http://www.dawghousedesignstudio.com/wp-content/uploads/2010/01/25/free-stock-photos-1.jpg */
-.slide:nth-of-type(2){
-    background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/123941/free-stock-photos-1.jpg');
-}
-
-/* http://www.stockfreeimages.com/static/homepage/waterfall-free-stock-photo-244915.jpg */
-.slide:nth-of-type(3){
-    background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/123941/waterfall-free-stock-photo-244915.jpg');
-}
-
-.controls{
-    background: #333;
-    color: #fff;
-    border: none;
-    padding: 20px 0px;
-    font-size: 20px;
+    z-index: 5;
+    width: 4.3rem;
+    height: 2.7rem;
+    fill: #fff;
+    opacity: 0.7;
+    transition: .25s;
+    top: 50%;
+    transform: translate(-50% -50%);
     cursor: pointer;
-    border: 2px solid #fff;
-    margin: 10px 0px 0px 10px;
-    width: 70px;
+    &:hover {
+        opacity: 1;
+    }
 }
-
-.controls:hover,
-.controls:focus{
-    background: #eee;
-    color: #333;
-}
-
-.container{
+.slider-button{
+    width: 50%;
+    background: transparent;
     position: relative;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    border: none;
+    &::after{
+        content: '';
+        position: absolute;
+        display: block;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        
+    }
+    &__wrap{
+        max-height: auto;
+        max-width: 17.5rem;
+        overflow: hidden;
+    }
+    &__img{
+        max-width: 100%;
+        
+    }
 }
-
-.buttons{
-    position: absolute;
-    left: 0px;
-    top: 0px;
-    z-index: 10;
-    font-size: 0px;
+.slider-button_prev{
+    &::after{
+        background-color: rgba(182, 180, 174, 0.7);  
+    }
+    
+}
+.slider-button_next{
+    &::after{
+        background-color: rgba(136, 131, 114, 0.5); 
+    }
 }
