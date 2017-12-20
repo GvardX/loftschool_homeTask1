@@ -6,6 +6,27 @@
     grid-template-areas:  
     "info disp"
     "info btns";
+    @include tablets{
+        height: 109.5rem;
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: 60rem 27rem 22.5rem;
+        grid-template-areas:  
+        "disp"
+        "info" 
+        "btns";
+    }
+    @include phones{
+        height: 57.5rem;
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: 26rem 22rem 9.5rem;
+        grid-template-areas:  
+        "disp"
+        "info" 
+        "btns";
+    }
+
 }
 
 .slider-info{
@@ -15,6 +36,12 @@
     align-items: center;
     padding: 24.5rem 0 21rem;
     background-color: #f0efe9;
+    @include tablets{
+        padding: 4.4rem 0 6rem;
+    }
+    @include phones{
+        padding: 1rem 0;
+    }
     &__lang{ 
         color: $greenLight;
         font-weight: 500;
@@ -24,6 +51,9 @@
         text-align: center;
         border-top: 1px solid $greenDark;
         border-bottom: 1px solid $greenDark;
+        @include tablets{
+            margin-bottom: 1.8rem;
+        }
         
     }
     &__wrap{
@@ -44,20 +74,26 @@
             width: 2.2rem;
             background-color: rgba($greyDark, .2);
         }
+        @include tablets{
+            margin-bottom: 1.9rem;
+            width: 40rem;
+        }
     
     }
     &-btn{
         border: none;  
-        background-color: $greenLight;
-        cursor: pointer;  
-        transition: .25s;
-        &:hover{
-            background-color: $greenDark; 
-        }     
+        color: #fff;
+        padding: 0;
+             
         &__link{
+            background-color: $greenLight;
+            cursor: pointer;  
             display: block;
-            color: #fff;
+            transition: .25s;
             padding: 1.5rem 2rem;
+            &:hover{
+                background-color: $greenDark; 
+            }
         }
     } 
 }

@@ -9,6 +9,12 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    @include tablets{
+        padding: 2.8rem 2.4rem 0;
+    }
+    @include tablets{
+        padding: 1rem 1.1rem 0;
+    }
 }
 
 .top-line{
@@ -58,6 +64,10 @@
         height: 3.5rem;
         fill: rgba(#fff, .5);
         transition: .25s;
+        @include phones{
+            width: 2.5rem;
+            height: 2.2rem;
+        }
     }
     &:hover{
         cursor: pointer;
@@ -65,6 +75,7 @@
             fill: #fff;
         }
     }
+    
 }
 .arrow-down{
     &__img{
@@ -80,3 +91,27 @@
         }
     }
 }
+.triangle{
+    position: absolute;
+    width: 100%;  
+    bottom: -1rem;
+}
+.about__triangle{
+    .left{
+        fill: #efeee9;
+       //width: 100%;
+       
+       
+    }
+    .right{
+        fill: #eeebdf;;
+    }
+}
+.my-works__header{
+    .about__triangle{
+        .left, .right{
+            fill: #faf8f0;
+        }
+    }
+}
+    

@@ -35,6 +35,9 @@
         font-weight: 500;
         transition: .25s;
     }
+    @include desktop {
+        right: 2rem;
+    }
 }
 
 .block-info {
@@ -73,5 +76,17 @@
             color: #ffffff;
             font-weight: 300;
             opacity: 0.6;
+            @include tablets{
+                font-size: 1.4rem;
+            }
+            @include phones{
+                text-align: center;
+                line-height: 24.14px;
+            }
+            .name-text{
+                @include phones{
+                    display: block;
+                }
+            }
         }
     }

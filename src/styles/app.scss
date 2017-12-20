@@ -1,17 +1,8 @@
+@import 'common/media';
 @import 'common/fonts';
 @import 'common/vars';
 @import 'common/libs';
-@import 'common/slider';
-@import 'common/socials';
-@import 'common/menu';
-@import 'common/about-me';
-@import 'common/header';
-@import 'common/footer';
-@import 'common/skills';
-@import 'pages/welcome';
-@import 'pages/about';
-@import 'pages/blog';
-@import 'pages/my-works';
+
 html {
     box-sizing: border-box;
     font-size: 10px;
@@ -53,10 +44,22 @@ body {
 
 .h2 {
     font-size: 6.3rem;
+    @include tablets{
+        font-size: 4.9rem;
+    }
+    @include phones{
+        font-size: 3.5rem;
+    }
 }
 
 .h3 {
     font-size: 3.5rem;
+    @include tablets{
+        font-size: 3rem;
+    }
+    @include phones{
+        font-size: 2.1rem;
+    }
 }
 
 .h4 {
@@ -66,6 +69,12 @@ body {
 .p,
 .span {
     font-size: 1.6rem;
+    @include tablets{
+        font-size: 1.4rem;
+    }
+    @include phones{
+        font-size: 1.4rem;
+    }
 }
 
 ul {
@@ -180,5 +189,15 @@ a {
         right: -3.2rem;
     }
 }
-// Социальные иконки
-//Меню
+
+@import 'common/slider';
+@import 'common/socials';
+@import 'common/menu';
+@import 'common/about-me';
+@import 'common/header';
+@import 'common/footer';
+@import 'common/skills';
+@import 'pages/welcome';
+@import 'pages/about';
+@import 'pages/blog';
+@import 'pages/my-works';

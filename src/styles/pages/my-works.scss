@@ -25,22 +25,38 @@
     display: flex;
     justify-content: center;
     padding: 2rem 0 20rem;
+    @include tablets{
+        padding: 0 1rem 28.6rem;
+    }
     &__wrap{
         text-align: center;
         display: flex;
         flex-direction: column;
         align-items: center;
+        @include phones{
+            padding-left: 3rem;
+        }
     }
     &__title{
         margin: 0 0 4rem;
         line-height: 6.6rem;
+        padding-left: 3rem;
+        @include phones{
+            line-height: 4.2rem;
+        }
         
     }
 }
 .form__text{
     width: 29rem;
-    position: absolute;
     top: -2rem;
+    @include tablets{
+        width: 37rem;
+    }
+    @include phones{
+        width: 16rem;
+    }
+
 }
 
 .form__subtitle{
@@ -58,11 +74,20 @@
 .comments{
     display: flex;
     text-align: left; 
+    @include phones{
+        flex-direction: column;
+        align-items: center;
+    }
     &-block{
         position: relative;
         max-width: 37rem;
         display: flex;
         flex-direction: column;
+        text-align: left; 
+        @include phones{
+        margin-bottom: 3rem;
+        max-width: 34rem;       
+        }
         .comments__quotes{
             position: absolute;
             top: -2.9rem;
@@ -75,14 +100,27 @@
         }
         &:last-child{
             margin-left: 3.7rem;
+            @include phones{
+                margin-left: 0;
+            }
         }
         .p{
             line-height: 2.6rem;
+            @include tablets{
+                line-height: 2.4rem;
+            }
+
         }
     }
 }
 .form__comments{
     margin-bottom: 7rem;
+    @include tablets{
+        margin-bottom: 5rem;
+    }
+    @include phones{
+        margin-bottom: 0;
+    }
 }
  
 .man-dates{
@@ -113,6 +151,10 @@
     border-radius: 0.7rem;
     margin-bottom: 7rem;
     overflow: hidden;
+    width: 38rem;
+    @include phones{
+        width: 30rem;
+    }
     
 }
 .connect__content{

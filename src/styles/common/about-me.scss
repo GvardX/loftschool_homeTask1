@@ -8,8 +8,12 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        @include phones{
+            padding: 4rem 4em;
+        }
     }
     &__title {
+        margin-top: 0;
         margin-bottom: 1rem;
         font-weight: 600;
     }
@@ -17,6 +21,9 @@
         font-size: 1.6rem;
         margin-bottom: 3.5rem;
         opacity: 0.8;
+        @include phones{
+            font-size: 1.4rem;
+        }
     }
     &__img-rounded {     
         overflow: hidden;
