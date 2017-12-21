@@ -20,43 +20,43 @@ block content
                         h3.h3.who-am-i-info__title.text-subtitle.line-h3 Кто я
                         .who-am-i-info_description
                             p.p
-                            | Я веб разработчик из Новосибирска. Мне 27 лет. Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
+                                | Я веб разработчик из Новосибирска. Мне 27 лет. Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
                             p.p
-                            | Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
+                                | Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
             .about-right
                 .my-data
                     .my-achievements.about_flex
-                        h3.h3.my-achievements__title.text-subtitle.line-h3 Чем я могу быть полезен
+                        h3.h3.my-achievements__title.text-subtitle.line-h3 Чем я могу быть вам полезен
                         p.p.my-achievements_description
-                        | Больше всего меня привлекет Frontend разработка, но я также знаком и могу решать не сложные задачи на Backend. Но давайте по порядку.
+                            | Больше всего меня привлекет Frontend разработка, но я также знаком и могу решать не сложные задачи на Backend. Но давайте по порядку.
                     .my-statistics
-                        .my-statistics-frontend.frontend
+                        .my-statistics-skills.frontend
                             h4.h4.my-staistics__title Frontend
-                                ul.frontend-row.frontend__list
-                                    each item, index in {25: "HTML &amp; CSS", 45: "CSS3", 75: "JavaScript &amp; jQuery"}
-                                        li.frontend__item.circle-item
-                                            svg(class="circles" viewBox="0 0 110 110")
-                                                circle(r="45" cx="50%" cy="50%" fill="none" class="circle__first")
-                                                circle(r="45" cx="50%" cy="50%" transform="rotate(-90 55 55)" class="circle__second circle-"+index)
-                                            span.frontend__title.circle__title #{item}
-                        .my-statistics-backend.backend
+                            ul.skills-row.skills__list
+                                each item, index in {25: "HTML &amp; CSS", 45: "CSS3", 75: "JavaScript &amp; jQuery"}
+                                    li.frontend__item.circle-item
+                                        svg(class="circles" viewBox="0 0 110 110")
+                                            circle(r="45" cx="50%" cy="50%" fill="none" class="circle__first")
+                                            circle(r="45" cx="50%" cy="50%" transform="rotate(-90 55 55)" class="circle__second circle-"+index)
+                                        span.frontend__title.circle__title #{item}
+                        .my-statistics-skills.backend
                             h4.h4.my-staistics__title Backend
-                                ul.frontend-row.frontend__list
-                                    each item, index in {20: "PHP", 90: "mySQL", 40: "Node.js &amp; npm", 70: "Mongo.db"}
-                                        li.backend__item.circle-item
-                                            svg(class="circles" viewBox="0 0 110 110")
-                                                circle(r="45" cx="50%" cy="50%" fill="none" class="circle__first")
-                                                circle(r="45" cx="50%" cy="50%" transform="rotate(-90 55 55)" class="circle__second circle-"+index) 
-                                            span.backend__title.circle__title #{item}                    
-                        .my-statistics-workflow.workflow
+                            ul.skills-row.skills__list
+                                each item, index in {20: "PHP", 90: "mySQL", 40: "Node.js &amp; npm", 70: "Mongo.db"}
+                                    li.backend__item.circle-item
+                                        svg(class="circles" viewBox="0 0 110 110")
+                                            circle(r="45" cx="50%" cy="50%" fill="none" class="circle__first")
+                                            circle(r="45" cx="50%" cy="50%" transform="rotate(-90 55 55)" class="circle__second circle-"+index) 
+                                        span.backend__title.circle__title #{item}                    
+                        .my-statistics-skills.workflow
                             h4.h4.my-staistics__title Workflow
-                                ul.frontend-row.frontend__list
-                                    each item, index in {35: "Git", 55: "Gulp", 80: "Bower"}
-                                        li.workflow__item.circle-item
-                                            svg(class="circles" viewBox="0 0 110 110")
-                                                circle(r="45" cx="50%" cy="50%" fill="none" class="circle__first")
-                                                circle(r="45" cx="50%" cy="50%" transform="rotate(-90 55 55)" class="circle__second circle-"+index)
-                                            span.workflow__title.circle__title #{item}
+                            ul.skills-row.skills__list
+                                each item, index in {35: "Git", 55: "Gulp", 80: "Bower"}
+                                    li.workflow__item.circle-item
+                                        svg(class="circles" viewBox="0 0 110 110")
+                                            circle(r="45" cx="50%" cy="50%" fill="none" class="circle__first")
+                                            circle(r="45" cx="50%" cy="50%" transform="rotate(-90 55 55)" class="circle__second circle-"+index)
+                                        span.workflow__title.circle__title #{item}
         section.map
             .map__contacts.contacts
                 h3.h3.contacts__title.main-title.line-h3 Контакты

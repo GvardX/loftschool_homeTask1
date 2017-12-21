@@ -4,6 +4,9 @@
     &-left,
     &-right {
         width: 50%;
+    }
+    @include tablets{
+        flex-direction: column;
     }   
 }
 
@@ -18,6 +21,10 @@
     height: auto;
     overflow: hidden;
     margin-bottom: 4rem;
+    @include phones{
+        max-width: 32rem;
+        
+    }
     &__img {
         max-width: 100%;
         max-height: 100%;
@@ -29,6 +36,14 @@
     position: relative;
     z-index: 10;
     display: flex;
+    @include tablets{
+        padding: 4.9rem 10rem;
+        width: 100%;
+    }
+    @include phones{
+        padding: 2.8rem 0;
+        width: 100%;
+    }
 }
 
 .about-left {
@@ -38,6 +53,9 @@
     @include desktop{
         flex-direction: column;
         align-items: center;
+    }
+    @include tablets{
+        padding: 4.9rem 10rem;
     }
 }
 
@@ -54,15 +72,37 @@
  
 .who-am-i {
     width: 44.3rem;
+    &-info{
+        
+        @include phones{
+            padding: 0 7rem;
+        }
+    }
 }
 
 .my-achievements {
     margin-bottom: 5.5rem;
+    @include tablets{
+        margin-bottom: 4.8rem;
+    }
+    @include phones{
+        margin-bottom: 2.7rem;
+    }
+    &__title{
+        @include tablets{
+            max-width: 20rem;    
+            text-align: center;
+        }
+        
+    }
 }
 
 .my-data {
     padding-right: 6.4rem;
     padding-left: 3.9rem;
+    @include phones{
+        padding: 0 1rem;
+    }
 }
 .cont-icon{
     fill: $greenLight;
@@ -79,7 +119,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 46rem;
+    padding: 32.7rem 0 46rem;
+    @include tablets{
+        padding-top: 17.6rem;
+    }
+    @include phones{
+        padding: 0  0 67rem;
+    }
     &__contacts{
         @include desktop{
             min-width: 38rem;
@@ -95,9 +141,26 @@
     opacity: 0.85;
     padding: 3.5rem 4rem 4rem;
     border-radius: 0.5rem;
+    min-width: 38rem;
+    position: relative;
+    @include tablets{
+        min-width: 35rem; 
+    }
+    @include phones{
+        width: 100%;
+        position: absolute;
+        top: 0;
+        padding: 3rem 3rem;
+        opacity: 1;
+        
+    } 
 }
 .contacts__title{
     margin: 0 0 3rem;;
+    @include tablets{
+        font-size: 3.5rem;
+        
+    }
 }
 .my-contacts{
     display: flex;
@@ -108,6 +171,16 @@
     display: flex;
     align-items: center;
     margin-bottom: 2.8rem;
+    @include tablets{
+        margin-bottom: 2.3rem;
+        font-weight: 600;
+    }
+    @include phones{
+        font-size: 1.3rem;
+        margin-bottom: 2rem;
+        
+    }
+    
     &:last-child{
         margin: 0;
     }
