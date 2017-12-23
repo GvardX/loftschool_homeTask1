@@ -91,11 +91,23 @@
             display: block;
             transition: .25s;
             padding: 1.5rem 2rem;
+            display: flex;
             &:hover{
                 background-color: $greenDark; 
             }
         }
     } 
+}
+.slider_sign{
+    &:before{
+        content: '';
+        display: block;
+        width: 2rem;
+        height: 1.9rem;
+        background-image: url(../images/icons/link.svg);
+        background-size: cover;
+        margin-right: 1.1rem;
+    }
 }
 .button_radius{
     border-radius: 0.4rem;

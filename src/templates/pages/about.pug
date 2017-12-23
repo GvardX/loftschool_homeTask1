@@ -1,18 +1,14 @@
-extends ../template
+extends ../common/header
 
 block variables
     - var title = "Обо мне"
 
 block content
     .content
-        include ../common/header
         section.about
             .about-left
-                .about-left__title.bg-title.bg-title_size_small
-                    .bg-title__img.about-title__img
-                        svg(class= "bg-icon")
-                            use(xlink:href= "assets/images/sprite.svg#about_header")
-                    h2.h2.bg-title__text.main-title.about__title.line-about-me Обо мне
+                .about-title__bg.bg-title.bg-title_size_small
+                    h2.h2.bg-title__text.main-title.line-works Обо мне
                 .who-am-i
                     .who-am-i-avatar
                         img.who-am-i-avatar__img(src="assets/images/avatar.png")

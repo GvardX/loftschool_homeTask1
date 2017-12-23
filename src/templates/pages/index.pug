@@ -6,9 +6,13 @@ include ../common/mixins
 
 block variables
     - var title = "Добро пожаловать"
-block content
+block header
     .content.welcome-content
         section.welcome
+            #parallax.parallax
+                - for (var i = 9; i > 0; i--)
+                    .parallax__layer
+                        img(src= `assets/images/bg-parallax_img_0${i}.png`).parallax__img
             button.button 
                 span.span Авторизоватьcя
             .block-info

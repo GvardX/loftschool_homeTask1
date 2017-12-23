@@ -9,7 +9,14 @@
         flex-direction: column;
     }   
 }
-
+.about-title__bg{
+    max-height: 12rem;
+    top: -5rem;
+    &:after{
+        background-image: url('../images/icons/about_header.svg'); 
+        
+    }
+}
 .who-am-i {
     display: flex;
     flex-direction: column;
@@ -49,7 +56,7 @@
 .about-left {
     background-color: #F0EFE9;
     position: relative;
-    padding: 0 2.1rem 14.4rem 5.3rem;
+    padding: 0 2.1rem 14.4rem 0;
     @include desktop{
         flex-direction: column;
         align-items: center;
@@ -194,10 +201,4 @@
 
 .my-statistics__title{
     margin: 0;
-}
-.about__title{
-    margin: 0;
-}
-.about-title__img{
-    top: -5rem;
 }
