@@ -1,10 +1,12 @@
-extends ../common/header
+extends ../template
 
-
+block variables
+    - var title = "Мои работы"
 
 block content
     .content.my-works__header
-        section.my-works
+        include ../common/header.pug
+        section#my-works
             .my-works__title.bg-title.bg-title_size_big
                 h2.h2.bg-title__text.main-title.line-works Мои работы
             include ../common/slider
@@ -36,9 +38,9 @@ block content
                 form.form_connect.connect
                     .connect__bg
                     .connect__content
-                        h3.h3.main-title.text__subtitle.main-title Связаться со мной
-                        input.input(type="text", name="name" placeholder="Имя")
-                        input.input(type="email", name="name" placeholder="Email")
+                        h3.h3.main-title.text__subtitle.main-title.connect__title Связаться со мной
+                        input.input.input_my-works(type="text", name="name" placeholder="Имя")
+                        input.input.input_my-works(type="email", name="name" placeholder="Email")
                         textarea.input.textarea(name="comment" placeholder="Ваше сообщение")
                     .form_btns-block                            
                         a(href="#").slider-info-btn__link.button_radius.form_btn
@@ -50,7 +52,8 @@ block content
                 .arrow-up
                     svg.arrow-down__img
                         use(xlink:href="assets/images/sprite.svg#arrow_down")
+
+                                
     include ../common/footer
-        
 
         

@@ -1,34 +1,21 @@
-extends ../template
-
-block header
-    header.header
-        .scroll-parallax
-            .scroll-parallax__container
-                - for (var i = 9; i > 0; i--)
-                    .scroll-parallax__layer
-                        img(src=`assets/images/bg-parallax_img_0${i}.png`).scroll-parallax__image
-                .scroll-parallax__layer
-                    .portfolio
-                .scroll-parallax__layer
-                    .top-line
-                        +socials('socials__item_white')
-                        .hamburger.header__menu
-                            svg.hamburger__img
-                                use(xlink:href="assets/images/sprite.svg#hamburger")
-                    .about-me.about-me__white
-                            .about-me__img-rounded.img-rounded.img-rounded_size_big
-                                img(src="assets/images/avatar.png", alt="avatar")
-                            .h3.about-me__title Андрей Азимов
-                            .span.about-me__description Личный сайт веб-разработчика
-                    .arrow-down.header__arrow
-                        a(href="#").arrow-down__link
-                            svg.arrow-down__img
-                                use(xlink:href="assets/images/sprite.svg#arrow_down")
-                    .triangle.about__triangle
-                                svg.triangle-pic(xmlns="http://www.w3.org/2000/svg" viewbox="0 0 1000 85" preserveaspectratio="none")
-                                    polygon(class = 'left' points="0,0 0,86 500.8,86 500.8,75.5")
-                                    polygon(class = 'right' points="1000,0 1000,86 500,86 500,75.5")
-                .parallax__content
-                    block content
-                
-                
+header.header
+    .top-line
+        +socials('socials__item_white')
+        .hamburger.header__menu
+            .hamburger__line
+            .hamburger__line
+            .hamburger__line        
+    .portfolio
+        .about-me.about-me__white
+            .about-me__img-rounded.img-rounded.img-rounded_size_big
+                img(src="assets/images/avatar.png", alt="avatar")
+            .h3.about-me__title Андрей Азимов
+            .span.about-me__description Личный сайт веб-разработчика
+    .arrow-down.header__arrow
+        a(href="#my-works").arrow-down__link
+            svg.arrow-down__img
+                use(xlink:href="assets/images/sprite.svg#arrow_down")
+    .triangle.about__triangle
+                svg.triangle-pic(xmlns="http://www.w3.org/2000/svg" viewbox="0 0 1000 85" preserveaspectratio="none")
+                    polygon(class = 'left' points="0,0 0,86 500.8,86 500.8,75.5")
+                    polygon(class = 'right' points="1000,0 1000,86 500,86 500,75.5")

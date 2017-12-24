@@ -27,6 +27,11 @@
 .header-blog{
     .header{
         height: 65vh;
+        .triangle{
+            .left, .right{
+                fill: #fff;
+            }
+        }
     }
 }
 
@@ -175,19 +180,6 @@ a.blog-menu__link {
 }
 .blog{
     position: relative;
-
-    &::before{
-        content: ''; 
-        display: block;
-        height: 100%;
-        width: 100%;
-        background-image: url(../images/icons/bg-blog.svg);
-        background-repeat: no-repeat;  
-        background-size: contain;    
-        top: -13rem;
-        position: absolute;
-       // z-index: -5;
-    }
 }
 .blog-article__paragraphs{
     margin-bottom: 1.6rem;

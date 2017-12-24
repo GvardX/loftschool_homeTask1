@@ -10,11 +10,26 @@
     }   
 }
 .about-title__bg{
-    max-height: 12rem;
+    min-height: 12rem;
     top: -5rem;
     &:after{
         background-image: url('../images/icons/about_header.svg'); 
-        
+        @include phones{
+            max-height: 6rem;
+            max-width: 20rem;
+            top: 50%; 
+            left: 50%;
+            transform: translate(-50%);
+        }
+    }
+    @include phones{
+        padding: 0;
+    }
+}
+.about-title__text{
+    @include phones{
+        position: relative;
+        top: 3rem;
     }
 }
 .who-am-i {
@@ -43,8 +58,8 @@
     position: relative;
     z-index: 10;
     display: flex;
+    align-items: flex-start;
     @include tablets{
-        padding: 4.9rem 10rem;
         width: 100%;
     }
     @include phones{
@@ -64,11 +79,17 @@
     @include tablets{
         padding: 4.9rem 10rem;
     }
+    @include phones{
+        padding: 0 0 2.9rem 0;
+    }
 }
 
 .about-right {
     background-color: #EFEBE0;
     flex-direction: column;
+    @include tablets{
+        padding: 0;
+    }
 }
 
 .about_flex {
@@ -107,8 +128,11 @@
 .my-data {
     padding-right: 6.4rem;
     padding-left: 3.9rem;
+    @include tablets{
+        padding: 1.5rem;
+    }
     @include phones{
-        padding: 0 1rem;
+        padding: 2rem 1rem;
     }
 }
 .cont-icon{
@@ -201,4 +225,13 @@
 
 .my-statistics__title{
     margin: 0;
+}
+.google-map{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    &__frame{
+        height: 100%;
+    }
 }

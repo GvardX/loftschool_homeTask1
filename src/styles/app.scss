@@ -139,16 +139,21 @@ a {
     min-width: 36rem;
 }
 .bg-title_size_big{
-    min-width: 50rem;
+    max-width: 50rem;
 }
 .line-h3{
     &::before{
-        top: 1.7rem;
+        top: 2rem;
         left: -4rem;;
     }
     &::after{
-        bottom: 1.7rem;
+        top: 2rem;
         right: -4rem;
+    }
+    @include phones{
+        &::after, &::before{
+            top: 1.5rem;
+        }
     }
 }
 .bg-title__text{
@@ -164,6 +169,23 @@ a {
         bottom: 4.5rem;
         right: -4rem;
     }
+    @include tablets{
+        &::before{
+            top: 3.5rem;
+        }
+        &::after{
+            bottom: 3.5rem;
+        }
+        
+    }
+    @include phones{
+        &::before{
+            top: 2.5rem;
+        }
+        &::after{
+            bottom: 2.5rem;
+        }
+    }
 }
 .line-about-talk{
     &::before{
@@ -174,6 +196,21 @@ a {
         bottom: 9.6rem;
         right: -4.2rem;
     }
+    @include tablets{
+        &::after{
+            bottom: 3.2rem;
+        }
+        
+    }
+    @include phones{
+        &::before{
+            top: 1.7rem;
+        }
+        &::after{
+            bottom: 6.3rem;
+            right: -3.2rem;
+        }
+    }
 }
 .bg-title{
     display: flex;
@@ -182,6 +219,9 @@ a {
     padding: 4.5rem 0;
     margin: 0 auto;
     position: relative;
+    @include tablets{
+            padding: 0;
+        }
     &:after{
         content: "";
         background-position: center;

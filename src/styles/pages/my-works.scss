@@ -180,15 +180,29 @@
 .connect__bg{
     position: absolute;
     display: block;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background-color: #fff;
-    filter: blur(1rem);
+    filter: blur(7px);
     z-index: 1;
-    opacity: 0.8;
+    background: url(../images/bg-form1-png.png) center no-repeat; 
+    height: 100%;
+    width: 100%;
+}
+.connect__title{
+    margin-bottom: 3.9rem;
+    &::before{
+        left: 2rem; 
+        top: 2rem;
+        @include phones{
+            top: 1rem;
+        }
+    }
+    &::after{
+        top: 2rem;
+        right: 2rem;
+        @include phones{
+            top: 1rem;
+        }
 
+    }
 }
 .form_btns-block{
     display: flex;
@@ -203,14 +217,17 @@
 }
 .input{
     border: none;
-    height: 4.5rem;
-    margin-bottom: 2rem;
-    border-radius: 0.5rem;
-    padding: 1.6rem 1.9rem;
     outline: none;
     &:focus{
         border: 0.1rem solid $greenDark;
+        border-radius: 0.5rem;
     }
+}
+.input_my-works, .textarea{
+    padding: 1.6rem 1.9rem;
+    margin-bottom: 2rem;
+    border-radius: 0.5rem;
+    height: 4.5rem;
 }
 .textarea{
     height: 14rem;
