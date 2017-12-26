@@ -4,31 +4,18 @@ block variables
     - var title = "Мои работы"
 
 block content
-    .content
+    .content.my-works__header
         include ../common/header.pug
         section.my-works
-            .triangle.my-works__triangle
-                svg.triangle-pic(xmlns="http://www.w3.org/2000/svg" viewbox="0 0 1000 85" preserveaspectratio="none")
-                    polygon(class = 'left' points="0,0 0,86 500.8,86 500.8,75.5")
-                    polygon(class = 'right' points="1000,0 1000,86 500,86 500,75.5")
-            .my-works__title.bg-title
-                .bg-title__img
-                        svg(class= "bg-icon")
-                            use(xlink:href= "assets/images/sprite.svg#works_header")
-                h2.h2.bg-title__text.main-title.my-works__text.line-works Мои работы
+            .my-works__title.bg-title.bg-title_size_big
+                h2.h2.bg-title__text.main-title.line-works Мои работы
             include ../common/slider
         section.form
             .form__wrap
                 .form__title.bg-title.bg-title_size_big
-                    .bg-title__img
-                        svg(class= "bg-icon")
-                            use(xlink:href= "assets/images/sprite.svg#about_header")
-                    h2.h2.bg-title__text.main-title.form__text.line-about-talk Что обо мне говорят
+                    h2.h2.form__text.main-title.form__text.line-about-talk Что обо мне говорят
                 .form__comments.comments
                     .comments-block
-                        .comments__quotes
-                            svg(class= "quotes-icon")
-                                use(xlink:href= "assets/images/sprite.svg#quotes")
                         p.p.comments__paragraph 
                             | Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
                         .comments__man-dates.man-dates
@@ -39,9 +26,6 @@ block content
                                     span.span.man-dates__name Ковальчук Дмитрий
                                     span.span.man-dates__info основатель Loftschool
                     .comments-block
-                        .comments__quotes
-                            svg(class= "quotes-icon")
-                                use(xlink:href= "assets/images/sprite.svg#quotes")
                         p.p.comments__paragraph 
                             | Этот код выдержит любые испытания. Только пожалуйста, не загружается сайт на слишком старых браузерах!
                         .comments__man-dates.man-dates        
@@ -54,16 +38,16 @@ block content
                 form.form_connect.connect
                     .connect__bg
                     .connect__content
-                        h3.h3.main-title.text__subtitle.main-title Связаться со мной
-                        input.input(type="text", name="name" placeholder="Имя")
-                        input.input(type="email", name="name" placeholder="Email")
+                        h3.h3.main-title.text__subtitle.main-title.connect__title Связаться со мной
+                        input.input.input_my-works(type="text", name="name" placeholder="Имя")
+                        input.input.input_my-works(type="email", name="name" placeholder="Email")
                         textarea.input.textarea(name="comment" placeholder="Ваше сообщение")
-                    .form_btns-block
-                        button.slider-info-btn.form_btn
-                            span.slider-info-btn__link 
+                    .form_btns-block                            
+                        a(href="#").slider-info-btn__link.button_radius.form_btn
+                            span.slider-info-btn
                                 | Отправить
-                        button.slider-info-btn.form_btn
-                            span.slider-info-btn__link 
+                        a(href="#").slider-info-btn__link.form_btn
+                            span.slider-info-btn
                                 | Очистить
                 .arrow-up
                     svg.arrow-down__img

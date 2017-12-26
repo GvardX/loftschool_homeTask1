@@ -1,31 +1,41 @@
 .footer{
+    display: flex;
     position: absolute;
     bottom: 0;
     flex-direction: column;
     background-color: $greyDark;
     opacity: 0.85;
     width: 100%;
+    color: rgba(#fff, .5);
     &-row{
         padding: 1.7rem 3rem 1.9rem;
         display: flex;
         justify-content: space-between;
+        @include tablets{
+            align-items: center;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        @include phones{
+            font-size: 1.1rem;
+            padding: 1.7rem 1rem 1.9rem;
+            text-align: center;
+        }
         }
     .border-line{
         border-bottom: 0.2rem solid rgba(#fff, .1);
     }
 }
 .footer-text{
-    color: rgba(#fff, .5);
     font-weight: 300;
-    .span{
-        display: block;
-    }
+    line-height: 2.4rem;
 }
 .main-menu{
     &__item{
         display: inline-block;
-        font-weight: 500;
-        font-size: 1.6rem;
+        font-weight: 600;
+        
     }
     &__footer{
         padding: 0;
@@ -41,4 +51,20 @@
 }
 .main-menu__item_footer{
     margin-right: 4rem;
+    @include tablets{
+       margin-bottom: 1.9rem;
+    }
+    @include phones{
+        margin-right: 1rem;
+    }
+    
+}
+.footer-col_marg-bot{
+    @include tablets{
+        margin-bottom: 2rem;
+        .footer-text{
+            width: 69rem;
+            
+        }
+    }
 }

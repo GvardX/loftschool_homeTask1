@@ -6,17 +6,10 @@ block variables
 block content
     .content
         include ../common/header
-        section.about
-            .triangle.about__triangle
-                svg.triangle-pic(xmlns="http://www.w3.org/2000/svg" viewbox="0 0 1000 85" preserveaspectratio="none")
-                    polygon(class = 'left' points="0,0 0,86 500.8,86 500.8,75.5")
-                    polygon(class = 'right' points="1000,0 1000,86 500,86 500,75.5")
+        section.about.arrow-to-section
             .about-left
-                .about-left__title.bg-title.bg-title_size_small
-                    .bg-title__img.about-title__img
-                        svg(class= "bg-icon")
-                            use(xlink:href= "assets/images/sprite.svg#about_header")
-                    h2.h2.bg-title__text.main-title.about__title.line-about-me Обо мне
+                .about-title__bg.bg-title.bg-title_size_small
+                    h2.h2.bg-title__text.main-title.about-title__text.line-works Обо мне
                 .who-am-i
                     .who-am-i-avatar
                         img.who-am-i-avatar__img(src="assets/images/avatar.png")
@@ -24,44 +17,46 @@ block content
                         h3.h3.who-am-i-info__title.text-subtitle.line-h3 Кто я
                         .who-am-i-info_description
                             p.p
-                            | Я веб разработчик из Новосибирска. Мне 27 лет. Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
+                                | Я веб разработчик из Новосибирска. Мне 27 лет. Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
                             p.p
-                            | Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
+                                | Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
             .about-right
                 .my-data
                     .my-achievements.about_flex
-                        h3.h3.my-achievements__title.text-subtitle.line-h3 Чем я могу быть полезен
+                        h3.h3.my-achievements__title.text-subtitle.line-h3 Чем я могу быть вам полезен
                         p.p.my-achievements_description
-                        | Больше всего меня привлекет Frontend разработка, но я также знаком и могу решать не сложные задачи на Backend. Но давайте по порядку.
+                            | Больше всего меня привлекет Frontend разработка, но я также знаком и могу решать не сложные задачи на Backend. Но давайте по порядку.
                     .my-statistics
-                        .my-statistics-frontend.frontend
+                        .my-statistics-skills.frontend
                             h4.h4.my-staistics__title Frontend
-                                ul.frontend-row.frontend__list
-                                    each item, index in {25: "HTML &amp; CSS", 45: "CSS3", 75: "JavaScript &amp; jQuery"}
-                                        li.frontend__item.circle-item
-                                            svg(class="circles" viewBox="0 0 110 110")
-                                                circle(r="45" cx="50%" cy="50%" fill="none" class="circle__first")
-                                                circle(r="45" cx="50%" cy="50%" transform="rotate(-90 55 55)" class="circle__second circle-"+index)
-                                            span.frontend__title.circle__title #{item}
-                        .my-statistics-backend.backend
+                            ul.skills-row.skills__list
+                                each item, index in {25: "HTML &amp; CSS", 45: "CSS3", 75: "JavaScript &amp; jQuery"}
+                                    li.frontend__item.circle-item
+                                        svg(class="circles" viewBox="0 0 110 110")
+                                            circle(r="45" cx="50%" cy="50%" fill="none" class="circle__first")
+                                            circle(r="45" cx="50%" cy="50%" transform="rotate(-90 55 55)" class="circle__second circle-"+index)
+                                        span.frontend__title.circle__title #{item}
+                        .my-statistics-skills.backend
                             h4.h4.my-staistics__title Backend
-                                ul.frontend-row.frontend__list
-                                    each item, index in {20: "PHP", 90: "mySQL", 40: "Node.js &amp; npm", 70: "Mongo.db"}
-                                        li.backend__item.circle-item
-                                            svg(class="circles" viewBox="0 0 110 110")
-                                                circle(r="45" cx="50%" cy="50%" fill="none" class="circle__first")
-                                                circle(r="45" cx="50%" cy="50%" transform="rotate(-90 55 55)" class="circle__second circle-"+index) 
-                                            span.backend__title.circle__title #{item}                    
-                        .my-statistics-workflow.workflow
+                            ul.skills-row.skills__list
+                                each item, index in {20: "PHP", 90: "mySQL", 40: "Node.js &amp; npm", 70: "Mongo.db"}
+                                    li.backend__item.circle-item
+                                        svg(class="circles" viewBox="0 0 110 110")
+                                            circle(r="45" cx="50%" cy="50%" fill="none" class="circle__first")
+                                            circle(r="45" cx="50%" cy="50%" transform="rotate(-90 55 55)" class="circle__second circle-"+index) 
+                                        span.backend__title.circle__title #{item}                    
+                        .my-statistics-skills.workflow
                             h4.h4.my-staistics__title Workflow
-                                ul.frontend-row.frontend__list
-                                    each item, index in {35: "Git", 55: "Gulp", 80: "Bower"}
-                                        li.workflow__item.circle-item
-                                            svg(class="circles" viewBox="0 0 110 110")
-                                                circle(r="45" cx="50%" cy="50%" fill="none" class="circle__first")
-                                                circle(r="45" cx="50%" cy="50%" transform="rotate(-90 55 55)" class="circle__second circle-"+index)
-                                            span.workflow__title.circle__title #{item}
+                            ul.skills-row.skills__list
+                                each item, index in {35: "Git", 55: "Gulp", 80: "Bower"}
+                                    li.workflow__item.circle-item
+                                        svg(class="circles" viewBox="0 0 110 110")
+                                            circle(r="45" cx="50%" cy="50%" fill="none" class="circle__first")
+                                            circle(r="45" cx="50%" cy="50%" transform="rotate(-90 55 55)" class="circle__second circle-"+index)
+                                        span.workflow__title.circle__title #{item}
         section.map
+            .google-map
+                <iframe class="google-map__frame"  src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d2534.3091257345977!2d36.53095226513001!3d50.56561673694183!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1z0JzQvtC70L7QtNC10LbQvdCw0Y8g0YPQu9C40YbQsCwg0JHQtdC70LPQvtGA0L7QtCwg0JHQtdC70LPQvtGA0L7QtNGB0LrQsNGPINC-0LHQu9Cw0YHRgtGMIDE0!5e0!3m2!1sru!2sru!4v1514131000033" width="100%" height="100%" frameborder="0" style="border:0" allowfullscreen></iframe>
             .map__contacts.contacts
                 h3.h3.contacts__title.main-title.line-h3 Контакты
                 ul.contacts__list.my-contacts 

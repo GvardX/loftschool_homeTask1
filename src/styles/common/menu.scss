@@ -18,6 +18,13 @@
         white-space: nowrap;
         font-weight: 600;
         padding: 1.4rem 3.2rem;
+        @include tablets{
+            padding: 1.4rem 2.6rem;
+        }
+        @include phones{
+            padding: 1.4rem 2.1rem;
+            text-align: center;
+        }
     }
 }
 

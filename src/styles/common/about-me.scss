@@ -2,14 +2,19 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin: auto;
     &__wrapper {
-        padding: 4rem 6.6rem;
+        padding: 4rem 6.6rem 0;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        @include phones{
+            padding: 4rem 4em 0;
+        }
     }
     &__title {
+        margin-top: 0;
         margin-bottom: 1rem;
         font-weight: 600;
     }
@@ -17,6 +22,9 @@
         font-size: 1.6rem;
         margin-bottom: 3.5rem;
         opacity: 0.8;
+        @include phones{
+            font-size: 1.4rem;
+        }
     }
     &__img-rounded {     
         overflow: hidden;
@@ -39,3 +47,75 @@
 .img-rounded{
     border-radius: 50% 50%;
 }
+
+
+.login{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    &__wrapper{
+        padding: 3.3rem 2rem 3.9rem;   
+    }
+    &__title{
+        margin-bottom: 4rem;
+    }
+}
+.checkbox{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    &__human{
+        margin-bottom: 1.9rem;
+    }
+    &__robot{
+        .span{
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+    }
+}
+.robot-radio{
+    display: flex;
+    justify-content: space-between;
+    max-width: 20rem;
+}
+
+.input_login{
+    position: relative;
+    width: 100%;
+    padding-left: 1.8rem;
+    border-radius: none; 
+    height: 100%;
+    
+}
+
+.input-wrapper{
+    display: flex;
+    width: 100%;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    height: 4.5rem;
+    margin-bottom: 2rem;
+    &::before{
+        content: '';
+        display: block;
+        width: 4.5rem;
+        height: 4.5rem;
+        background-color: #f0efe9;
+        
+    }
+}
+.input_text{
+    &::before{
+        background: url(../images/icons/login.svg) center no-repeat;
+    }
+}
+.input_password{
+    &::before{
+        background: url(../images/icons/password.svg) center no-repeat;
+    }
+}
+    
+
