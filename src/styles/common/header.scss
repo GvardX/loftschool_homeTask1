@@ -123,20 +123,26 @@
         background-color: #fff;
         margin-bottom: 1rem;
         border-radius: 0.5rem;
+        opacity: 1;
         transition: all 0.3s ease-in-out;
+        
     }
 }
-.hamburger.active{
+.active{
 
     .hamburger__line{
         &:nth-child(2){
             opacity: 0;
         }
         &:nth-child(1){
-            transform: rotate(45deg) translateY(2.1rem);
+            transform: rotate(-45deg) translateY(2.1rem);
+            margin-left: -1.5rem;
+           
         }
         &:nth-child(3){
-            transform: rotate(-45deg) translateY(-2.1rem);
+            transform: rotate(45deg) translateY(-2.1rem);
+            margin-left: -1.5rem;
+    
         }
     }
 }
