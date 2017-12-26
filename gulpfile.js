@@ -21,7 +21,7 @@ const paths = {
         dist: 'build/assets/styles/'        
     },
     images: {
-        src: 'src/images/*.*',
+        src: 'src/images/**/*.*',
         dist: 'build/assets/images/'
     },
     scripts: {

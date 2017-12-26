@@ -8,10 +8,30 @@
     position: relative;
     z-index: 10;
     padding: 7rem 10.7rem 0 13.4rem; 
+    @include desktop{
+        padding: 7rem 10.7rem 0 4.4rem; 
+    }
+    @include tablets{
+        display: none;
+    }
+}
+.blog-menu__right{
+    @include tablets{
+        padding-left: 2.5rem;
+    }
+    @include phones{
+        padding-left: 1rem;
+    }
+    
 }
 .header-blog{
     .header{
         height: 65vh;
+        .triangle{
+            .left, .right{
+                fill: #fff;
+            }
+        }
     }
 }
 
@@ -19,6 +39,17 @@
     max-width: 98rem;
     position: relative;
     padding: 7rem 0;
+    @include desktop{
+        max-width: 68.2rem;
+    }
+    @include tablets{
+        padding: 5rem 0;
+    }
+    @include phones{
+        padding: 3rem 0;
+    }
+    
+
     &::after {
         content: '';
         display: block;
@@ -30,9 +61,18 @@
         left: 0;
     }
 }
+.blog-article__code{
+    @include desktop{
+        max-width: 68.2rem;
+        img{
+            width: 100%;
+        }
+    }
+}
 
 .blog-menu {
     max-width: 28rem;
+    min-width: 25rem;
     font-size: 1.6rem;
     &__item {
         margin-bottom: 3.8rem;
@@ -75,6 +115,7 @@
 a.blog-menu__link {
     color: $greyLight;
     line-height: 2.6rem;
+    
 }
 
 .blog-title {
@@ -115,10 +156,23 @@ a.blog-menu__link {
 .blog-article {
     &__title.h3 {
         margin-bottom: 2.8rem;
+        @include tablets{
+            margin-bottom: 2rem;
+        }
+    
+        @include phones{
+            margin-bottom: 1.9rem;
+        }
     }
     &__date {
         margin-bottom: 2.5rem;
         display: block;
+        @include tablets{
+            margin-bottom: 1.6rem;
+        }
+        @include phones{
+            margin-bottom: 1.7rem;
+        }
     }
     &__text {
         line-height: 2.6rem;
@@ -126,26 +180,13 @@ a.blog-menu__link {
 }
 .blog{
     position: relative;
-    //display: flex;
-    //justify-content: center;
-    //align-items: center;
-    //padding-bottom: 1rem;
-    //background-color: #FBF8F1;
-    &::before{
-        content: ''; 
-        display: block;
-        height: 100%;
-        width: 100%;
-        background-image: url(../images/icons/bg-blog.svg);
-        background-repeat: no-repeat;  
-        background-size: contain;    
-        top: -13rem;
-        position: absolute;
-       // z-index: -5;
-    }
 }
 .blog-article__paragraphs{
     margin-bottom: 1.6rem;
+        @include tablets{
+             font-size: 1.4rem;
+             line-height: 2.1rem;
+        }
 }
 .blog__triangle{
     fill: #fff;
