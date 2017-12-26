@@ -21,8 +21,11 @@ $(document).ready(function(){
   });
 });
 
+
+
 var blur = (function(){
   if(document.querySelector('.form__connect') || document.querySelector('.connect_bg')){
+    
     var wrapper = document.querySelector('.form__connect'),// blur не знаю почему не работает
       connectBg = document.querySelector('.connect_bg');
 
@@ -38,13 +41,14 @@ var blur = (function(){
   }
 })();
 
-blur.set();
 
-window.onresize = function(){
+if(typeof blur === 'function'){
   blur.set();
-};
 
-var hamburger  = document.querySelector('.hamburger'); // гамбургер на js
-hamburger.onclick = function() {
-  this.classList.toggle('active');
-};
+  window.onresize = function(){
+    blur.set();
+  };
+}
+
+
+
