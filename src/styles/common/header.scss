@@ -26,7 +26,7 @@
 }
 .header__arrow{
     position: absolute;
-    z-index: 15;
+    z-index: 10;
     bottom: 7rem;
 }
 .header__menu{
@@ -146,4 +146,74 @@
         }
     }
 }
+
+.fullscreen-menu{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    position: absolute;
+    top: -3rem;
+    left: -3rem;
+    width: 100vw;
+    height: 100vh;
+    z-index: -20;
+  }
+  .fullscreen-menu.active{
+      overflow-y: hidden;
+      z-index: 20;
+  }
+  .fullscreen-menu:before, .fullscreen-menu:after{
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 0vw;
+    height: 100vh;
+    transition: 400ms;
+    background-color: $greenLight;
+    opacity: 0.9;
+  }
+  .fullscreen-menu:before{
+    left: 0;
+  }
+  .fullscreen-menu:after{
+    right: 0;
+  }
+  .fullscreen-menu.active:before, .fullscreen-menu.active:after{
+    width: 50vw;
+  }
+  .fullscreen-menu .fullscreen-menu__item{
     
+    position: relative;
+    z-index: 5;
+    font-size: 4.4rem;
+    list-style-type: none;
+    margin-bottom: 1rem;
+    cursor: pointer;
+    opacity: 0;
+    transition: 300ms;
+   
+    top: -100%;
+  }
+  .fullscreen-menu.active .fullscreen-menu__item{
+    display: block;
+    top: 50%;
+    opacity: 1;
+  }
+  .fullscreen-menu__list{
+    align-self: center;
+  }
+  .fullscreen-menu__link{
+    color: #fff;
+    position: relative;
+    &::before, &::after{
+        background-color: #fff;
+        opacity: 0;
+        transition: 250ms;
+    }
+    &:hover{
+        &::before, &::after{
+            display: block;
+            opacity: 1;
+        }
+    }
+  }

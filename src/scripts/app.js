@@ -6,21 +6,157 @@ $(document).ready(function(){
   $('.arrow-down__link').click( function(){
     var scroll_el = $(this).attr('href');
     if ($(scroll_el).length != 0) { 
-      $('html, body').animate({ scrollTop: $(scroll_el).offset().top }, 1000); 
+      $('html, body').animate({ scrollTop: $(scroll_el).offset().top }, 300); 
     }
     return false;
   });
   
   $('.hamburger').on('click', function(){ // гамбургер на jquery
     $(this).toggleClass('active');
-
+    $('.fullscreen-menu').toggleClass('active');
+    if($('.hamburger').hasClass('active')){
+      $('html').css('overflow-y', 'hidden');
+    }else{
+      $('html').css('overflow-y', 'auto');
+    }
+  });
+  $('.sign-in, .to-main').on('click', function(){ //переворачивание плашки
+    $('.block-info .about-me__wrapper').toggleClass('active-sign');
+    $('.block-info .login__wrapper').toggleClass('active-sign');
     
   });
-  $('.sign-in').on('click', function(){ //переворачивание плашки
-    $('.info-container').toggleClass('active');
-  });
-});
 
+  $('.slider-button_next').on('click', () => {
+    let activeImage = $('.slider-show__img.active-img'),
+      activeImageIndex = activeImage.index(),
+      nextImageIndex = activeImageIndex + 1,
+      nextImage = $('.slider-show__img').eq(nextImageIndex);
+    activeImage.fadeOut(300);
+    activeImage.removeClass('active-img');
+    if(nextImageIndex == ($('.slider-show__img:last').index()+1)){
+      $('.slider-show__img:nth-child(1)').fadeIn(300);
+      $('.slider-show__img:nth-child(1)').addClass('active-img');
+    } else {
+      nextImage.fadeIn(300);
+      nextImage.addClass('active-img');
+    }
+  });
+  $('.slider-button_prev').on('click', () => {
+    let activeImage = $('.slider-show__img.active-img'),
+      activeImageIndex = activeImage.index(),
+      prevImageIndex = activeImageIndex - 1,
+      prevImage = $('.slider-show__img').eq(prevImageIndex);
+    activeImage.fadeOut(300);
+    activeImage.removeClass('active-img');
+    if(prevImageIndex == ($('.slider-show__img:first').index()-1)){
+      $('.slider-show__img:last-child').fadeIn(300);
+      $('.slider-show__img:last-child').addClass('active-img');
+    } else {
+      prevImage.fadeIn(300);
+      prevImage.addClass('active-img');
+    }
+  });
+
+  /*
+  var preloader = (function () {
+    var percentsTotal = 0,
+      preloader = $('.preloader');
+  
+    var imgPath = $('*').map(function (ndx, element) {
+      var background = $(element).css('background-image'),
+        img = $(element).is('img'),
+        path = '';
+  
+      if (background != 'none') {
+        path = background.replace('url("', '').replace('")', '');
+      }
+  
+      if (img) {
+        path = $(element).attr('src');
+      }
+  
+      if (path) return path;
+      console.log(path);
+  
+    });
+  
+    var setPercents = function (total, current) {
+      var persents = Math.ceil(current / total * 100);
+  
+      $('.preloader__percents').text(persents + '%');
+  
+      if (persents >= 100) {
+        preloader.fadeOut();
+      }
+    };
+  
+    var loadImages = function (images) {
+  
+      if (!images.length) preloader.fadeOut();
+  
+      images.forEach(function (img, i, images) {
+        var fakeImage = $('<img>', {
+          attr: {
+            src: img,
+          },
+        });
+  
+        fakeImage.on('load error', function () {
+          percentsTotal++;
+          setPercents(images.length, percentsTotal);
+        });
+      });
+    };
+  
+    return {
+      init: function () {
+        var imgs = imgPath.toArray();
+  
+        loadImages(imgs);
+      },
+    };
+  }());*/
+
+  
+  
+});
+let images = document.images,
+  imagesTotal = images.length,
+  imagesCurrent = 0,
+  preloader = $('.preloader'),
+  showPercent = $('.preloader__percents');
+
+for(var i = 0; i < imagesTotal; i++){
+  var imageClone = new Image();
+  imageClone.onload = funcImageLoaded;
+  imageClone.onerror = funcImageLoaded;
+  imageClone.src = images[i].src;
+}
+
+function funcImageLoaded(){
+  imagesCurrent++;
+  showPercent.innerHTML = (((100/imagesTotal)*imagesCurrent)<<0) + '%';
+  if(imagesCurrent >= imagesTotal) {
+    if(!preloader.hasClass('done')){
+      setTimeout(() => {
+        return preloader.addClass('done');
+      }, 2000);
+      
+    }
+
+  }
+}
+/*var images = $('img'),
+  imagesTotal = images.length,
+  imagesCurrent = 1,
+  preloader = $('.preloader'),
+  showPercent = $('.preloader__percents');
+function imgLoaded(){
+  setTimeout(() => {
+    showPercent.text(`${imagesCurrent/imagesTotal*100}%`);
+  }, 1000);
+}
+imgLoaded()*/
 
 
 var blur = (function(){

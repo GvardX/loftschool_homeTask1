@@ -29,6 +29,6 @@ function parallaxWelcome() {
   }
 }
 
-parallaxWelcome();
+
 
 module.exports = parallaxWelcome;

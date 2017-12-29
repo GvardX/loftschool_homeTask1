@@ -29,6 +29,7 @@
 }
 
 .menu__item {
+    text-align: center;
     &:hover {
         background-color: $greenDark;
         cursor: pointer;

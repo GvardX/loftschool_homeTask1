@@ -7,6 +7,7 @@ include ../common/mixins
 block variables
     - var title = "Добро пожаловать"
 block content
+    include ../common/preloader
     .content.welcome-content
         section.welcome
             #parallax.parallax
@@ -15,50 +16,49 @@ block content
                         img(src= `assets/images/bg-parallax_img_0${i}.png`).parallax__img
             button.button.sign-in
                 span.span Авторизоватьcя
-            .info-container
-                .block-info
-                    .about-me__wrapper
-                        .about-me
-                            .about-me__img-rounded.img-rounded.img-rounded_size_big
-                                img(src="assets/images/avatar.png", alt="avatar")
-                            h4.h4.about-me__title Андрей Азимов
-                            span.about-me__description Личный сайт веб-разработчика
-                        +socials('socials__item_green')
-                        ul.menu
-                            li.menu__item
-                                a.menu__link(href="my-works.html") Мои работы
-                            li.menu__item
-                                a.menu__link(href="about.html") Обо мне
-                            li.menu__item
-                                a.menu__link(href="blog.html") Блог
-                    .login__wrapper
-                        .login
-                            h3.login__title.h3 Авторизуйтесь
-                            .input-wrapper.input_text
-                                input(type="text" placeholder="Логин").input.input_login
-                            .input-wrapper.input_password
-                                input(type="password" placeholder="Пароль").input.input_login
-                            .checkbox  
-                                .checkbox__human
-                                    input(type="checkbox" id="human")
-                                    label(for="human") Я человек
-                                .checkbox__robot
-                                    span.span Вы точно не робот?
-                                    .robot-radio
-                                        .robot-radio__yes
-                                            input(type="checkbox" id="yes")
-                                            label(for="yes") Да
-                                        .robot-radio__not-sure     
-                                            input(type="checkbox" id="not-sure")
-                                            label(for="not-sure") Не уверен
-                        ul.menu
-                            li.menu__item
-                                a.menu__link(href="my-works.html") Мои работы
-                            li.menu__item
-                                a.menu__link(href="about.html") Обо мне
-                            li.menu__item
-                                a.menu__link(href="blog.html") Блог
-                                
+            
+            .block-info
+                .about-me__wrapper
+                    .about-me
+                        .about-me__img-rounded.img-rounded.img-rounded_size_big
+                            img(src="assets/images/avatar.png", alt="avatar")
+                        h4.h4.about-me__title Андрей Азимов
+                        span.about-me__description Личный сайт веб-разработчика
+                    +socials('socials__item_green')
+                    ul.menu
+                        li.menu__item
+                            a.menu__link(href="my-works.html") Мои работы
+                        li.menu__item
+                            a.menu__link(href="about.html") Обо мне
+                        li.menu__item
+                            a.menu__link(href="blog.html") Блог
+                .login__wrapper.active-sign
+                    .login
+                        h3.login__title.h3.main-title.line-h3 Авторизуйтесь
+                        .input-wrapper.input_text
+                            input(type="text" placeholder="Логин").input.input_login
+                        .input-wrapper.input_password
+                            input(type="password" placeholder="Пароль").input.input_login
+                        .checkbox  
+                            .checkbox__human.item-checkbox
+                                input(type="checkbox" id="human")
+                                label(for="human") Я человек
+                            .checkbox__robot
+                                span.span Вы точно не робот?
+                                .robot-radio
+                                    .robot-radio__yes.item-checkbox
+                                        input(type="checkbox" id="yes")
+                                        label(for="yes") Да
+                                    .robot-radio__not-sure.item-checkbox     
+                                        input(type="checkbox" id="not-sure")
+                                        label(for="not-sure") Не уверен
+                    ul.menu
+                        li.menu__item.to-main
+                            a.menu__link(href="#") На главную
+                        li.menu__item
+                            a.menu__link(href="#") Войти
+                        
+                            
                             
                         
 

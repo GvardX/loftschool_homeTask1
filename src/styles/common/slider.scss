@@ -120,12 +120,17 @@
     background-color: #efebe0;
     overflow: hidden;
     &__wrap{
-        height: 41.6rem; 
+        height: 54.6rem; 
+        width: 44.5rem;
         overflow: hidden;
     }
     &__img{
         width: auto;
         height: 100%;
+        display: none;
+        &.active-img{
+            display: block;
+        }
     }
 }
 .slider-btns{
@@ -176,6 +181,10 @@
     }
     &__img{
         max-width: 100%;
+        display: none;
+        &.active-img{
+            display: block;
+        }
         
     }
 }

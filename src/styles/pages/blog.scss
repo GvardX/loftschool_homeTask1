@@ -1,5 +1,6 @@
 .blog {
     display: flex;
+    overflow-x: hidden;
 }
 .blog__content + .footer{
     position: static;
