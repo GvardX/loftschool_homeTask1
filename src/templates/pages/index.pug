@@ -35,28 +35,29 @@ block content
                 .login__wrapper.active-sign
                     .login
                         h3.login__title.h3.main-title.line-h3 Авторизуйтесь
-                        .input-wrapper.input_text
-                            input(type="text" placeholder="Логин").input.input_login
-                        .input-wrapper.input_password
-                            input(type="password" placeholder="Пароль").input.input_login
-                        .checkbox  
-                            .checkbox__human.item-checkbox
-                                input(type="checkbox" id="human")
-                                label(for="human") Я человек
-                            .checkbox__robot
-                                span.span Вы точно не робот?
-                                .robot-radio
-                                    .robot-radio__yes.item-checkbox
-                                        input(type="checkbox" id="yes")
-                                        label(for="yes") Да
-                                    .robot-radio__not-sure.item-checkbox     
-                                        input(type="checkbox" id="not-sure")
-                                        label(for="not-sure") Не уверен
-                    ul.menu
-                        li.menu__item.to-main
-                            a.menu__link(href="#") На главную
-                        li.menu__item
-                            a.menu__link(href="#") Войти
+                        form.main-form
+                            .input-wrapper.input_text
+                                input(type="text" placeholder="Логин" id='user-name').input.input_login
+                            .input-wrapper.input_password
+                                input(type="password" placeholder="Пароль" id='user-pass').input.input_login
+                            .checkbox  
+                                .checkbox__human.item-checkbox
+                                    input(type="checkbox" id="human")
+                                    label(for="human") Я человек
+                                .checkbox__robot
+                                    span.span Вы точно не робот?
+                                    .robot-radio
+                                        .robot-radio__yes.item-checkbox
+                                            input(type="checkbox" id="yes")
+                                            label(for="yes") Да
+                                        .robot-radio__not-sure.item-checkbox     
+                                            input(type="checkbox" id="not-sure")
+                                            label(for="not-sure") Не уверен
+                            ul.menu
+                                li.menu__item.to-main
+                                    a.menu__link(href="#") На главную
+                                li.menu__item
+                                    button(type="submit").menu__link Войти
                         
                             
                             

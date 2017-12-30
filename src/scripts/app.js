@@ -26,36 +26,52 @@ $(document).ready(function(){
     
   });
 
-  $('.slider-button_next').on('click', () => {
-    let activeImage = $('.slider-show__img.active-img'),
-      activeImageIndex = activeImage.index(),
-      nextImageIndex = activeImageIndex + 1,
-      nextImage = $('.slider-show__img').eq(nextImageIndex);
-    activeImage.fadeOut(300);
-    activeImage.removeClass('active-img');
-    if(nextImageIndex == ($('.slider-show__img:last').index()+1)){
-      $('.slider-show__img:nth-child(1)').fadeIn(300);
-      $('.slider-show__img:nth-child(1)').addClass('active-img');
-    } else {
-      nextImage.fadeIn(300);
-      nextImage.addClass('active-img');
-    }
-  });
-  $('.slider-button_prev').on('click', () => {
-    let activeImage = $('.slider-show__img.active-img'),
-      activeImageIndex = activeImage.index(),
-      prevImageIndex = activeImageIndex - 1,
-      prevImage = $('.slider-show__img').eq(prevImageIndex);
-    activeImage.fadeOut(300);
-    activeImage.removeClass('active-img');
-    if(prevImageIndex == ($('.slider-show__img:first').index()-1)){
-      $('.slider-show__img:last-child').fadeIn(300);
-      $('.slider-show__img:last-child').addClass('active-img');
-    } else {
-      prevImage.fadeIn(300);
-      prevImage.addClass('active-img');
-    }
-  });
+  var slider = (function (){
+    var image = $('.slider-show__img');
+    var sliderInfoTitle = ['Сайт школы онлайн образования', 'Современный блог об ИТ технологиях', 'Портал видеоуроков и IT сообщество'];
+    var sliderInfoLang = ['Html, Css, Javacript', 'Html, Css, Javacript, Node.js, Vue.js', 'Html, Css, Javacript, Php'];
+    $('.slider-button_next').on('click', () => {
+      let activeImage = $('.slider-show__img.active-img'),
+        activeImageIndex = activeImage.index(),
+        nextImageIndex = activeImageIndex + 1,
+        nextImage = $('.slider-show__img').eq(nextImageIndex);
+      activeImage.fadeOut(300);
+      activeImage.removeClass('active-img');
+      if(nextImageIndex == ($('.slider-show__img:last').index()+1)){
+        $('.slider-show__img:nth-child(1)').fadeIn(300);
+        $('.slider-show__img:nth-child(1)').addClass('active-img');
+        $('.slider-info__title').text(sliderInfoTitle[0]);
+        $('.slider-info__lang').text(sliderInfoLang[0]);
+        
+      } else {
+        nextImage.fadeIn(300);
+        nextImage.addClass('active-img');
+        $('.slider-info__title').text(sliderInfoTitle[nextImageIndex]);
+        $('.slider-info__lang').text(sliderInfoLang[nextImageIndex]);
+      }
+    });
+    $('.slider-button_prev').on('click', () => {
+      let activeImage = $('.slider-show__img.active-img'),
+        activeImageIndex = activeImage.index(),
+        prevImageIndex = activeImageIndex - 1,
+        prevImage = $('.slider-show__img').eq(prevImageIndex);
+      activeImage.fadeOut(300);
+      activeImage.removeClass('active-img');
+      if(prevImageIndex == ($('.slider-show__img:first').index()-1)){
+        $('.slider-show__img:last-child').fadeIn(300);
+        $('.slider-show__img:last-child').addClass('active-img');
+        $('.slider-info__title').text(sliderInfoTitle[image.length-1]);
+        $('.slider-info__lang').text(sliderInfoLang[image.length-1]);
+      } else {
+        prevImage.fadeIn(300);
+        prevImage.addClass('active-img');
+        $('.slider-info__title').text(sliderInfoTitle[prevImageIndex]);
+        $('.slider-info__lang').text(sliderInfoLang[prevImageIndex]);
+      }
+    });
+  }());
+
+  
 
   /*
   var preloader = (function () {
@@ -116,7 +132,31 @@ $(document).ready(function(){
       },
     };
   }());*/
+  $('.main-form').submit(function(e){
+    e.preventDefault();
+    var userValid;
+    var passwordValid;
+    var userName = $('#user-name').val();
+    var userPass = $('#user-pass').val();
+    if(userName == ''){
+      $('#user-name').removeClass('form_success').addClass('form_failed');
+      userValid = false;
+    }else{
+      $('#user-name').removeClass('form_failed').addClass('form_success');
+      userValid = true;
+    }
+    if(userPass == ''){
+      $('#user-pass').removeClass('form_success').addClass('form_failed');
+      passwordValid = false;
+    }else{
+      $('#user-pass').removeClass('form_failed').addClass('form_success');
+      passwordValid = true;
+    }
+    if(userValid == true && passwordValid == true) {
+      $('.main-form').unbind('submit').submit();
+    }
 
+  });
   
   
 });
@@ -146,6 +186,9 @@ function funcImageLoaded(){
 
   }
 }
+
+
+
 /*var images = $('img'),
   imagesTotal = images.length,
   imagesCurrent = 1,
