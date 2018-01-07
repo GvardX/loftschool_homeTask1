@@ -1,4 +1,4 @@
-function parallaxWelcome() {
+var parallaxWelcome =  (function () {
   if(document.getElementById('parallax')){
     var parallaxContainer = document.getElementById('parallax'),
       layers = parallaxContainer.children;
@@ -27,8 +27,7 @@ function parallaxWelcome() {
     window.addEventListener('mousemove', moveLayers);
     
   }
-}
+}());
 
-parallaxWelcome();
 
 module.exports = parallaxWelcome;
