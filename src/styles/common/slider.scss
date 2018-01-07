@@ -119,6 +119,7 @@
     align-items: center;
     background-color: #efebe0;
     overflow: hidden;
+    padding: 3rem;
     &__wrap{
         height: 54.6rem; 
         width: 44.5rem;
@@ -164,6 +165,7 @@
     justify-content: center;
     overflow: hidden;
     border: none;
+    padding: 2rem 1rem;
     &::after{
         content: '';
         position: absolute;
@@ -171,21 +173,29 @@
         top: 0;
         bottom: 0;
         left: 0;
-        right: 0;
-        
+        right: 0; 
     }
+    &__img-up{
+        top: 100%;
+    }
+    &__img-down{
+        top: -100%;
+    }  
     &__wrap{
-        max-height: auto;
-        max-width: 17.5rem;
+        min-height: 25rem;
+        min-width: 20rem;
         overflow: hidden;
+        position: relative;
     }
-    &__img{
+    &__img-up, &__img-down{
         max-width: 100%;
-        display: none;
-        &.active-img{
-            display: block;
-        }
-        
+        position: absolute; 
+        left: 0;
+        width: 100%;
+        height: 100%;
+        &:first-child{
+            top: 0;
+        }       
     }
 }
 .slider-button_prev{
