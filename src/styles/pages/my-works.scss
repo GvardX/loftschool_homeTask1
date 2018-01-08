@@ -181,9 +181,11 @@
 .connect__bg{
     position: absolute;
     display: block;
-    filter: blur(7px);
+    filter: blur(10px);
     z-index: 1;
-    background: url(../images/bg-form1-png.png) center no-repeat; 
+    background: url(../images/bg-form1-png.png);
+    background-position: center;
+    background-repeat: no-repeat;
     height: 100%;
     width: 100%;
 }

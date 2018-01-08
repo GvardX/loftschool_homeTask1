@@ -168,183 +168,182 @@ $(document).ready(function(){
 
   });
   
+  var preloader = (function() {
+    var images = document.images,
+      imagesTotal = images.length,
+      imagesCurrent = 0,
+      preloader = $('.preloader'),
+      showPercent = $('.preloader__percents');
+    for(var i = 0; i < imagesTotal; i++){
+      var imageClone = new Image();
+      imageClone.onload = funcImageLoaded;
+      imageClone.onerror = funcImageLoaded;
+      imageClone.src = images[i].src;
+    }
   
-});
-var preloader = (function() {
-  var images = document.images,
-    imagesTotal = images.length,
-    imagesCurrent = 0,
-    preloader = $('.preloader'),
-    showPercent = $('.preloader__percents');
-  for(var i = 0; i < imagesTotal; i++){
-    var imageClone = new Image();
-    imageClone.onload = funcImageLoaded;
-    imageClone.onerror = funcImageLoaded;
-    imageClone.src = images[i].src;
-  }
-
-  function funcImageLoaded(){
-    imagesCurrent++;
-    showPercent.text( (100/imagesTotal) * imagesCurrent + ' %');
-    if(imagesCurrent >= imagesTotal) {
-      
-      setTimeout(() => {
-        if(!preloader.hasClass('done')){
-          return preloader.addClass('done');
-        }
-      }, 1000);
- 
-    }
-  }
-}());
-
-var headerParallax = (function(){
-  var bgImg = $('.bg-img'),
-    portfolio = $('.portfolio'),
-    aboutMe = $('.about-me');
-  var translate = 'translate3d(0)';
-
-  return {
-    move(block, windowScroll, strafeAmount){
-      var strafe;
-      if(block == bgImg) {      
-        strafe = (windowScroll / -strafeAmount + '%');
-      }else if(block == portfolio){
-        strafe = ((-15) + (windowScroll / -strafeAmount) + '%');
-      } else {
-        strafe = (35 + (windowScroll / -strafeAmount) + '%');
+    function funcImageLoaded(){
+      imagesCurrent++;
+      showPercent.text( (100/imagesTotal) * imagesCurrent + ' %');
+      if(imagesCurrent >= imagesTotal) {
         
-      }
-      block.css('top', strafe);
-      block.css('tranform', 'translate3d(0, ' + strafe + ', 0)');
-      
-    },
-    init(wScroll){
-      this.move(bgImg, wScroll, 35);
-      this.move(portfolio, wScroll, 23);
-      this.move(aboutMe, wScroll, 15);
-      
-    },
-  };
-}());
-
-$(window).on('scroll', ()=>{
-  var wScroll = window.pageYOffset;
-  headerParallax.init(wScroll);
-});
-
-
-let scrollMenu = (function() {
-  const $news = $('.blog-article');
-  const $item = $('.blog-menu__item');
-  const $wrapMenu = $('.blog-menu');
-  let positionArticle = [];
-  let offsetHeight = 0; // смещение реагирования на сменю меню
-
-  var _setPositionArticle = function(element) {
-    const len = element.length;
-    element.each(function(item) {
-      positionArticle[item] = {};
-      positionArticle[item].top = $(this).offset().top - offsetHeight;
-      positionArticle[item].bottom =
-        positionArticle[item].top + $(this).innerHeight();
-    });
-    // console.log(positionArticle);
-  };
-
-  var _scrollPageFixMenu = function(e) {
-    let scroll = window.pageYOffset;
-    if (scroll < $news.offsetHeight) {
-      $wrapMenu.removeClass('fixed');
-    } else {
-      $wrapMenu.addClass('fixed');
-    }
-  };
-
-  var _scrollPage = function(e) {
-    let scroll = window.pageYOffset;
-    positionArticle.forEach( (element, index) => {
-      if (
-        scroll >= element.top &&
-        scroll <= element.bottom
-      ) {
-        $item
-          .eq(index)
-          .addClass('blog-menu__item_active')
-          .siblings()
-          .removeClass('blog-menu__item_active');
-      }
-    });
-  };
-
-  var _clickMenu = function(e) {
-    let $element = $(e.target);
-    let index = $element.index();
-    let sectionOffset = positionArticle[index].top;
-
-    $(document).off('scroll', _scrollPage);
-    $element.siblings().removeClass('blog-menu__item_active');
-    $('body, html').animate(
-      {
-        scrollTop: sectionOffset,
-      },
-      1000,
-      () => {
-        $element.addClass('blog-menu__item_active');
-        $(document).on('scroll', _scrollPage);
-      }
-    );
-  };
-
-  var addListener = function() {
-    $('.blog-menu__item').on('click', _clickMenu);
-    $(document).on('scroll', _scrollPage);
-    $(document).on('scroll', _scrollPageFixMenu);
-
-    _setPositionArticle($news);
-
-    $(window).on('load', function(e) {
-      _setPositionArticle($news);
-    });
-
-    $(window).on('resize', function(e) {
-      _setPositionArticle($news);
-    });
-
-  };
-
-  return {
-    init: addListener,
-  };
-})();
-
-scrollMenu.init();
-
-if(document.querySelector('.form__connect') || document.querySelector('.connect_bg')){
-  var blur = (function(){
+        setTimeout(() => {
+          if(!preloader.hasClass('done')){
+            return preloader.addClass('done');
+          }
+        }, 1000);
    
-    var wrapper = document.querySelector('.form__connect'),// blur не знаю почему не работает
-      connectBg = document.querySelector('.connect_bg');
-
+      }
+    }
+  }());
+  
+  var headerParallax = (function(){
+    var bgImg = $('.bg-img'),
+      portfolio = $('.portfolio'),
+      aboutMe = $('.about-me');
+    var translate = 'translate3d(0)';
+  
     return {
-      set: function() {
-        var imgWidth =  document.querySelector('.form').offsetWidth,
-          posLeft = -wrapper.offsetLeft,
-          posTop =  -wrapper.offsetTop;
-        connectBg.style.backgroundSize = `${imgWidth}px auto`;
-        connectBg.style.backgroundPosition = `${posLeft}px ${posTop}px`;
+      move(block, windowScroll, strafeAmount){
+        var strafe;
+        if(block == bgImg) {      
+          strafe = (windowScroll / -strafeAmount + '%');
+        }else if(block == portfolio){
+          strafe = ((-15) + (windowScroll / -strafeAmount) + '%');
+        } else {
+          strafe = (35 + (windowScroll / -strafeAmount) + '%');
+          
+        }
+        block.css('top', strafe);
+        block.css('tranform', 'translate3d(0, ' + strafe + ', 0)');
+        
+      },
+      init(wScroll){
+        this.move(bgImg, wScroll, 35);
+        this.move(portfolio, wScroll, 23);
+        this.move(aboutMe, wScroll, 15);
+        
       },
     };
+  }());
   
+  $(window).on('scroll', ()=>{
+    var wScroll = window.pageYOffset;
+    headerParallax.init(wScroll);
+  });
+  
+  
+  let scrollMenu = (function() {
+    const $news = $('.blog-article');
+    const $item = $('.blog-menu__item');
+    const $wrapMenu = $('.blog-menu');
+    let positionArticle = [];
+    let offsetHeight = 0; // смещение реагирования на сменю меню
+  
+    var _setPositionArticle = function(element) {
+      const len = element.length;
+      element.each(function(item) {
+        positionArticle[item] = {};
+        positionArticle[item].top = $(this).offset().top - offsetHeight;
+        positionArticle[item].bottom =
+          positionArticle[item].top + $(this).innerHeight();
+      });
+      // console.log(positionArticle);
+    };
+  
+    var _scrollPageFixMenu = function(e) {
+      let scroll = window.pageYOffset;
+      if (scroll < $news.offsetHeight) {
+        $wrapMenu.removeClass('fixed');
+      } else {
+        $wrapMenu.addClass('fixed');
+      }
+    };
+  
+    var _scrollPage = function(e) {
+      let scroll = window.pageYOffset;
+      positionArticle.forEach( (element, index) => {
+        if (
+          scroll >= element.top &&
+          scroll <= element.bottom
+        ) {
+          $item
+            .eq(index)
+            .addClass('blog-menu__item_active')
+            .siblings()
+            .removeClass('blog-menu__item_active');
+        }
+      });
+    };
+  
+    var _clickMenu = function(e) {
+      let $element = $(e.target);
+      let index = $element.index();
+      let sectionOffset = positionArticle[index].top;
+  
+      $(document).off('scroll', _scrollPage);
+      $element.siblings().removeClass('blog-menu__item_active');
+      $('body, html').animate(
+        {
+          scrollTop: sectionOffset,
+        },
+        1000,
+        () => {
+          $element.addClass('blog-menu__item_active');
+          $(document).on('scroll', _scrollPage);
+        }
+      );
+    };
+  
+    var addListener = function() {
+      $('.blog-menu__item').on('click', _clickMenu);
+      $(document).on('scroll', _scrollPage);
+      $(document).on('scroll', _scrollPageFixMenu);
+  
+      _setPositionArticle($news);
+  
+      $(window).on('load', function(e) {
+        _setPositionArticle($news);
+      });
+  
+      $(window).on('resize', function(e) {
+        _setPositionArticle($news);
+      });
+  
+    };
+  
+    return {
+      init: addListener,
+    };
   })();
-  blur.set();
-  console.log(blur);
-  window.onresize = function(){
+  
+  scrollMenu.init();
+  
+  if(document.querySelector('.form_connect') || document.querySelector('.connect__bg')){
+    var blur = (function(){
+     
+      var wrapper = document.querySelector('.form_connect'),// blur не знаю почему не работает
+        connectBg = document.querySelector('.connect__bg');
+  
+      return {
+        set: function() {
+          var imgWidth =  document.querySelector('.form').offsetWidth,
+            posLeft = -wrapper.offsetLeft,
+            posTop =  -wrapper.offsetTop;
+          connectBg.style.backgroundSize = `${imgWidth}px auto`;
+          connectBg.style.backgroundPosition = `${posLeft}px ${posTop}px`;
+        },
+      };
+    
+    })();
     blur.set();
-  };
+    console.log(blur);
+    window.onresize = function(){
+      blur.set();
+    };
+  
+  }
+});
 
-
-}
 
 
 
