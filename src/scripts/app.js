@@ -337,7 +337,6 @@ if(document.querySelector('.form__connect') || document.querySelector('.connect_
     };
   
   })();
-
   blur.set();
   console.log(blur);
   window.onresize = function(){
