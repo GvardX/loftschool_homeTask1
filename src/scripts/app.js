@@ -148,14 +148,14 @@ $(document).ready(function(){
     var passwordValid;
     var userName = $('#user-name').val();
     var userPass = $('#user-pass').val();
-    if(userName == ''){
+    if(userName === ''){
       $('#user-name').removeClass('form_success').addClass('form_failed');
       userValid = false;
     }else{
       $('#user-name').removeClass('form_failed').addClass('form_success');
       userValid = true;
     }
-    if(userPass == ''){
+    if(userPass === ''){
       $('#user-pass').removeClass('form_success').addClass('form_failed');
       passwordValid = false;
     }else{
@@ -192,7 +192,7 @@ var preloader = (function() {
         if(!preloader.hasClass('done')){
           return preloader.addClass('done');
         }
-      }, 2000);
+      }, 1000);
  
     }
   }
@@ -254,7 +254,7 @@ let scrollMenu = (function() {
 
   var _scrollPageFixMenu = function(e) {
     let scroll = window.pageYOffset;
-    if (scroll < $news.offset().top) {
+    if (scroll < $news.offsetHeight) {
       $wrapMenu.removeClass('fixed');
     } else {
       $wrapMenu.addClass('fixed');
@@ -318,13 +318,11 @@ let scrollMenu = (function() {
   };
 })();
 
-console.log(scrollMenu);
 scrollMenu.init();
 
-
-var blur = (function(){
-  if(document.querySelector('.form__connect') || document.querySelector('.connect_bg')){
-    
+if(document.querySelector('.form__connect') || document.querySelector('.connect_bg')){
+  var blur = (function(){
+   
     var wrapper = document.querySelector('.form__connect'),// blur не знаю почему не работает
       connectBg = document.querySelector('.connect_bg');
 
@@ -337,17 +335,19 @@ var blur = (function(){
         connectBg.style.backgroundPosition = `${posLeft}px ${posTop}px`;
       },
     };
-  }
-})();
+  
+  })();
 
-
-if(typeof blur === 'function'){
   blur.set();
-
+  console.log(blur);
   window.onresize = function(){
     blur.set();
   };
+
+
 }
+
+
 
 
 
