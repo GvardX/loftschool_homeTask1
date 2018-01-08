@@ -326,7 +326,7 @@ $(document).ready(function(){
   
       return {
         set: function() {
-          var imgWidth =  document.querySelector('.form').offsetWidth,
+          var imgWidth =  document.querySelector('.form-bg').offsetWidth,
             posLeft = -wrapper.offsetLeft,
             posTop =  -wrapper.offsetTop;
           connectBg.style.backgroundSize = `${imgWidth}px auto`;
