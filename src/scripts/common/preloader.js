@@ -24,6 +24,6 @@ var preloader = (function() {
    
     }
   }
-}());
+});
 
-module.exports = preloader;
+exports.preloader = preloader;

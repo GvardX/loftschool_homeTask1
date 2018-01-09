@@ -1,7 +1,7 @@
 import {parallaxWelcome} from './common/parallax_welcome';
 
-var $ = require('jquery');
 
+var $ = require('jquery');
 $(document).ready(function(){   
   // это мягкий скролл от секции к секции
   $('.arrow-down__link').click( function(){
@@ -238,7 +238,7 @@ $(document).ready(function(){
     const $wrapMenu = $('.blog-menu');
     let positionArticle = [];
     let offsetHeight = 0; // смещение реагирования на сменю меню
-  
+    
     var _setPositionArticle = function(element) {
       const len = element.length;
       element.each(function(item) {
@@ -308,7 +308,7 @@ $(document).ready(function(){
       $(window).on('resize', function(e) {
         _setPositionArticle($news);
       });
-  
+      console.log($news);
     };
   
     return {
