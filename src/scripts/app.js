@@ -330,7 +330,7 @@ $(document).ready(function(){
             posLeft = -wrapper.offsetLeft,
             posTop =  -wrapper.offsetTop;
           connectBg.style.backgroundSize = `${imgWidth}px auto`;
-          connectBg.style.backgroundPosition = `${posLeft}px ${posTop}px`;
+          connectBg.style.backgroundPosition = `${posLeft}px ${posLeft - 93}px`;
         },
       };
     
