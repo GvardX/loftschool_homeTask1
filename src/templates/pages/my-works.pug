@@ -4,6 +4,7 @@ block variables
     - var title = "Мои работы"
 
 block content
+    include ../common/preloader
     .content.my-works__header
         include ../common/header.pug
         section.my-works
@@ -12,6 +13,8 @@ block content
             include ../common/slider
         section.form
             .form__wrap
+                .form-bg
+                    img(src="assets/images/bg-form1-png.png", alt="avatar")
                 .form__title.bg-title.bg-title_size_big
                     h2.h2.form__text.main-title.form__text.line-about-talk Что обо мне говорят
                 .form__comments.comments
@@ -43,10 +46,10 @@ block content
                         input.input.input_my-works(type="email", name="name" placeholder="Email")
                         textarea.input.textarea(name="comment" placeholder="Ваше сообщение")
                     .form_btns-block                            
-                        a(href="#").slider-info-btn__link.button_radius.form_btn
+                        button(type='submit').slider-info-btn__link.form_btn
                             span.slider-info-btn
                                 | Отправить
-                        a(href="#").slider-info-btn__link.form_btn
+                        button(type='reset').slider-info-btn__link.form_btn
                             span.slider-info-btn
                                 | Очистить
                 .arrow-up
